@@ -1,0 +1,78 @@
+# pyproject.toml = the single file that describes this Python project:
+# its name, dependencies, the `kap` command line entry point and tool settings.
+# `uv sync` reads it and builds a virtual environment in .venv/.
+[project]
+name = "kaprag"
+version = "0.1.0"
+description = "BIST Report Analyst: hybrid-search RAG over KAP disclosures and annual reports"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "pymupdf>=1.24",           # PDF text, fonts and table extraction
+    "pdfplumber>=0.11",        # second table extractor, used for comparison only
+    "sentence-transformers>=3.0",  # dense embeddings + cross-encoder reranker
+    "torch>=2.3",
+    "qdrant-client>=1.10",     # vector database in embedded (local folder) mode
+    "rank-bm25>=0.2.2",        # BM25 keyword search
+    "snowballstemmer>=2.2",    # optional Turkish stemming
+    "pydantic>=2.7",           # config + API schema validation
+    "pyyaml>=6.0",
+    "typer>=0.12",             # CLI framework
+    "rich>=13.7",              # pretty CLI tables
+    "fastapi>=0.111",
+    "uvicorn>=0.30",
+    "python-multipart>=0.0.9", # needed by FastAPI for file uploads
+    "streamlit>=1.36",
+    "httpx>=0.27",             # HTTP client for Ollama and the UI -> API calls
+    "python-dotenv>=1.0",
+    "pandas>=2.2",
+]
+
+[project.optional-dependencies]
+# Paid backends are optional: `uv sync --extra api` installs them.
+api = ["anthropic>=0.30", "openai>=1.35"]
+# OCR needs the system package `tesseract-ocr` + `tesseract-ocr-tur` too.
+ocr = ["pytesseract>=0.3.10", "pillow>=10.0"]
+
+[project.scripts]
+# This line creates the `kap` command: `uv run kap ingest` calls kaprag.cli:app
+kap = "kaprag.cli:app"
+
+[dependency-groups]
+dev = ["pytest>=8.2", "ruff>=0.5"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/kaprag"]
+
+# --- PyTorch wheels -------------------------------------------------------
+# By default we pull the CPU-only PyTorch build (small, works everywhere).
+# On a machine with an NVIDIA GPU change "pytorch-cpu" to "pytorch-cu124"
+# below and run `uv sync` again; the code auto-detects CUDA at runtime.
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[[tool.uv.index]]
+name = "pytorch-cu124"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

@@ -1,0 +1,14 @@
+# Data and generated artifacts never go to GitHub (copyrighted PDFs, big indexes)
+data/raw/
+data/index/
+data/cache/
+.cache/
+*.pdf
+# Python / tooling
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+# Secrets
+.env

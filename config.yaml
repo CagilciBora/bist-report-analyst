@@ -1,0 +1,70 @@
+# config.yaml — every tunable setting of the project lives here.
+# It is loaded and validated by src/kaprag/config.py (Pydantic), so a typo
+# such as `retrieval.mode: hybird` fails loudly at startup instead of silently.
+
+paths:
+  raw_dir: data/raw              # PDFs live in data/raw/<TICKER>/<YEAR>_<doc_type>.pdf
+  index_dir: data/index          # Qdrant + BM25 corpus + manifest are written here
+  companies_csv: data/companies.csv
+  prompts_dir: prompts
+
+parsing:
+  # A page with fewer extractable characters than this is treated as "scanned".
+  scanned_min_chars: 40
+  # Garbled score = share of control chars (+ excess vowel-less "words");
+  # above this the page has a broken font encoding and is handled like a scanned page.
+  garbled_ratio_threshold: 0.08
+  ocr_enabled: false             # needs `sudo apt install tesseract-ocr tesseract-ocr-tur`
+  ocr_lang: tur
+  # A line that repeats (after digit normalisation) on at least this share of
+  # pages (and at least 5 pages) is a header/footer and gets removed.
+  header_footer_min_ratio: 0.1
+  # A span is a heading if its font is this much larger than the body font,
+  # or bold and slightly larger (see SectionDetector).
+  heading_size_ratio: 1.2
+  table_engine: pymupdf          # pymupdf | pdfplumber (see docs for comparison)
+
+chunking:
+  target_tokens: 400             # aim for ~350–450 tokens per text chunk
+  max_tokens: 450
+  min_tokens: 40                 # tiny leftovers are merged into the previous chunk
+  overlap_tokens: 60
+  table_max_tokens: 450          # bigger tables are split by rows (header repeated)
+
+embedding:
+  model_name: BAAI/bge-m3        # alternative: intfloat/multilingual-e5-base
+  device: auto                   # auto -> cuda if available, else cpu
+  batch_size: 8
+  max_seq_length: 512
+  fp16: true                     # only used on CUDA
+
+bm25:
+  stemming: false                # Turkish Snowball stemmer on/off
+  k1: 1.5
+  b: 0.75
+
+retrieval:
+  mode: hybrid_rerank            # dense | bm25 | hybrid | hybrid_rerank
+  dense_top_k: 30
+  bm25_top_k: 30
+  rrf_k: 60
+  rerank_top_n: 20               # how many fused candidates the cross-encoder sees
+  final_top_k: 6
+  reranker_model: BAAI/bge-reranker-v2-m3
+  table_boost_enabled: true
+  table_boost: 1.15              # multiply score of table chunks for financial questions
+
+llm:
+  backend: ollama                # ollama | anthropic | openai
+  ollama_url: http://localhost:11434
+  ollama_model: qwen2.5:3b-instruct
+  anthropic_model: claude-sonnet-5-5
+  openai_model: gpt-4o-mini
+  temperature: 0.1
+  max_tokens: 900
+  timeout_s: 600
+  use_llm_query_parser: false    # optional LLM-based query parser (validated JSON)
+
+api:
+  host: 127.0.0.1
+  port: 8000
