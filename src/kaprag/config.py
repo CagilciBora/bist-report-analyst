@@ -90,7 +90,7 @@ class LLMConfig(BaseModel):
     backend: Literal["ollama", "anthropic", "openai"] = "ollama"
     ollama_url: str = "http://localhost:11434"
     ollama_model: str = "qwen2.5:3b-instruct"
-    anthropic_model: str = "claude-sonnet-5-5"
+    anthropic_model: str = "claude-opus-5-5"
     openai_model: str = "gpt-4o-mini"
     temperature: float = 0.1
     max_tokens: int = 900
@@ -122,6 +122,11 @@ class Settings(BaseModel):
         data = yaml.safe_load(path.read_text(encoding="utf-8")) if path.exists() else {}
         settings = cls.model_validate(data or {})
         settings.paths = settings.paths.resolve()
+        # Environment overrides (used by docker-compose: Ollama runs on the host).
+        if url := os.environ.get("KAP_OLLAMA_URL"):
+            settings.llm.ollama_url = url
+        if backend := os.environ.get("KAP_LLM_BACKEND"):
+            settings.llm = settings.llm.model_copy(update={"backend": backend})
         return settings
 
 

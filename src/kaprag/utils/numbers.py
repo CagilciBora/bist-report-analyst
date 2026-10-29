@@ -139,15 +139,26 @@ def _build(m: re.Match[str], offset: int = 0) -> ParsedNumber:
         value = -value
     scale_word = tr_lower(m.group("scale") or "")
     currency_word = tr_lower((m.group("cur2") or m.group("cur1") or "").strip())
+    raw, start = m.group(0), m.start()
+    if m.group("open") and not m.group("close"):
+        raw, start = raw[1:], start + 1  # "(955.472 - ..." : the "(" is grouping, not part of the number
+    end_trim = len(m.group(0)) - len(m.group(0).rstrip())
+    if m.group("close") and not m.group("open"):
+        # "... 745.430) / ..." : closing a grouping parenthesis, not an accounting negative
+        cut = raw.rstrip()
+        cut_at = cut.rfind(")")
+        if not (m.group("pct2") or m.group("scale") or m.group("cur2")):
+            raw, end_trim = cut[:cut_at], end_trim + len(cut) - cut_at
+    lead = len(raw) - len(raw.lstrip())
     return ParsedNumber(
-        raw=m.group(0).strip(),
+        raw=raw.strip(),
         value=value,
         scale=SCALE_WORDS.get(scale_word, 1.0),
         currency=CURRENCY_WORDS.get(currency_word),
         is_percent=bool(m.group("pct1") or m.group("pct2")),
         decimals=decimals,
-        start=m.start() + offset,
-        end=m.end() + offset,
+        start=start + lead + offset,
+        end=m.end() - end_trim + offset,
     )
 
 
