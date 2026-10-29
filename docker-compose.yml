@@ -1,0 +1,23 @@
+# docker compose up --build
+# Ollama is NOT in a container: it runs on the host (ollama serve) and the API
+# reaches it via host.docker.internal. Data and the index are mounted from ./data.
+services:
+  api:
+    build: .
+    ports: ["8000:8000"]
+    volumes:
+      - ./data:/app/data
+      - hf-cache:/hf-cache          # downloaded models survive rebuilds
+    environment:
+      KAP_OLLAMA_URL: http://host.docker.internal:11434
+    extra_hosts: ["host.docker.internal:host-gateway"]
+    env_file: [{path: .env, required: false}]
+  ui:
+    build: .
+    command: ["streamlit", "run", "ui/app.py", "--server.address", "0.0.0.0", "--server.port", "8501"]
+    ports: ["8501:8501"]
+    environment:
+      KAP_API_URL: http://api:8000
+    depends_on: [api]
+volumes:
+  hf-cache:

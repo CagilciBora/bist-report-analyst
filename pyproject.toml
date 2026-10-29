@@ -76,3 +76,7 @@ ignore = ["E501"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["src"]
+
+[tool.ruff.lint.flake8-bugbear]
+# FastAPI/Typer use function calls as parameter defaults by design.
+extend-immutable-calls = ["fastapi.File", "fastapi.Form", "typer.Option", "typer.Argument"]
