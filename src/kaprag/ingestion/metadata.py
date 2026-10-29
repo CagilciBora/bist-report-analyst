@@ -68,7 +68,9 @@ class CompanyRegistry:
         self.companies: dict[str, Company] = {}
         if csv_path.exists():
             with csv_path.open(encoding="utf-8") as fh:
-                for row in csv.DictReader(fh):
+                # Lines starting with '#' are comments (e.g. the review note).
+                lines = [ln for ln in fh if not ln.lstrip().startswith("#")]
+                for row in csv.DictReader(lines):
                     aliases = [a.strip() for a in row.get("aliases", "").split(";") if a.strip()]
                     c = Company(row["ticker"].strip(), row["name"].strip(), aliases,
                                 row.get("sector", "").strip())

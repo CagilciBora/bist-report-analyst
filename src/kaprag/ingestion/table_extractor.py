@@ -87,7 +87,8 @@ class TableExtractor:
             if self._is_collapsed(raw_rows):
                 continue  # e.g. a borderless statement squeezed into one cell
             rows = self._clean_rows(raw_rows)
-            if len(rows) < 2 or len(rows[0]) < 2:
+            # Judge text quality on the body rows; bold header rows are often glued but harmless.
+            if len(rows) < 2 or len(rows[0]) < 2 or self._is_garbled(rows[1:]):
                 continue
             bbox = tuple(t.bbox)
             out.append(
@@ -114,6 +115,23 @@ class TableExtractor:
         )
         return (avg_breaks > 4 or max(c.count("\n") for c in cells) > 12
                 or stacked / len(cells) > 0.15)
+
+    @staticmethod
+    def _is_garbled(rows: list[list[str]]) -> bool:
+        """True if the cell text itself is broken (common with rotated headers).
+
+        Symptoms: words glued together without spaces ("Dönembaşıbakiyesi"),
+        numbers split around the thousands dot ("22707 ."), or many one-letter
+        fragments from vertical text ("n K m Z D n a").
+        """
+        cells = [c for r in rows for c in r if c]
+        tokens = [t for c in cells for t in c.split()]
+        if not cells or not tokens:
+            return True
+        glued = sum(1 for c in cells if re.search(r"[^\W\d_]{22,}", c)) / len(cells)
+        split_num = sum(1 for c in cells if re.search(r"\d \.(\s|$)|(^|\s)\. ?\(?\d", c)) / len(cells)
+        one_letter = sum(1 for t in tokens if len(t) == 1 and t.isalpha()) / len(tokens)
+        return glued > 0.15 or split_num > 0.1 or one_letter > 0.25
 
     @staticmethod
     def _clean_rows(raw_rows: list[list[str | None]]) -> list[list[str]]:
@@ -214,12 +232,21 @@ class TableExtractor:
                     else:
                         gap += 1  # a label-only row like "Dönen Varlıklar" is allowed
                     j += 1
-                if n_numeric >= 4:
+                if n_numeric >= 4 and not self._is_prose(rows[start:end]):
                     return start, end
                 i = end
             else:
                 i += 1
         return None, len(rows)
+
+    @staticmethod
+    def _is_prose(region) -> bool:
+        """Two-column prose pages also have numbers; real statement rows have short labels."""
+        def prose(cells: list[_Cell]) -> bool:
+            words = [c.text for c in cells if not c.numeric]
+            return any(len(t) > 70 or t[:1].islower() or ". " in t for t in words)
+
+        return sum(prose(cells) for _, _, cells in region) / len(region) > 0.25
 
     @staticmethod
     def _rows_bbox(rows) -> BBox:

@@ -40,9 +40,9 @@ class SectionDetector:
             return False
         if letters / max(1, len(text.replace(" ", ""))) < 0.6:
             return False                      # "%18,4" or "2.384" in a big infographic font
-        if text.endswith((",", ";", ":")) or text[0].islower():
+        if text.endswith((",", ";", ":")) or text[0].islower() or "#" in text or ", " in text:
+            # sentence fragments, pull quotes and hashtags ("#gülümse") are not headings
             return False
         bigger = line.size >= self.body_size * self.size_ratio
         bold_title = line.bold and line.size >= self.body_size * 0.95 and not text.endswith(".")
-        # Bigger font is a heading only if it is not *tiny* text in a cover/infographic.
         return bigger or bold_title

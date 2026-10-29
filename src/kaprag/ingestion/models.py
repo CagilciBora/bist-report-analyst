@@ -47,11 +47,12 @@ class Table:
         rows = self.rows if rows is None else rows
         ncols = len(self.header)
 
-        def fmt(cells: list[str]) -> str:
+        def fmt(cells: list[str], limit: int = 400) -> str:
             cells = (list(cells) + [""] * ncols)[:ncols]
-            return "| " + " | ".join(c.replace("|", "/") for c in cells) + " |"
+            return "| " + " | ".join(c.replace("|", "/")[:limit] for c in cells) + " |"
 
-        lines = [fmt(self.header), "|" + "---|" * ncols]
+        # Header cells are capped at 80 chars so a broken header can't eat the chunk budget.
+        lines = [fmt(self.header, limit=80), "|" + "---|" * ncols]
         lines += [fmt(r) for r in rows]
         return "\n".join(lines)
 

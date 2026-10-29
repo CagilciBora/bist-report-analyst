@@ -1,0 +1,32 @@
+# REVIEW NEEDED: seeded automatically, please check names/aliases/sectors before relying on them. Lines starting with # are ignored. Aliases are separated by ';'. Note: Koza Altın may trade under a new ticker (TRALT) after 2025, verify.
+ticker,name,aliases,sector
+ASELS,ASELSAN Elektronik Sanayi ve Ticaret A.Ş.,Aselsan,Savunma
+THYAO,Türk Hava Yolları A.O.,Türk Hava Yolları;THY;Turkish Airlines;Türk Hava Yolları Anonim Ortaklığı,Ulaştırma
+BIMAS,BİM Birleşik Mağazalar A.Ş.,BİM;Bim Mağazaları;Birleşik Mağazalar,Perakende
+KCHOL,Koç Holding A.Ş.,Koç;Koç Holding,Holding
+SAHOL,Hacı Ömer Sabancı Holding A.Ş.,Sabancı;Sabancı Holding,Holding
+TUPRS,Türkiye Petrol Rafinerileri A.Ş.,Tüpraş,Enerji
+EREGL,Ereğli Demir ve Çelik Fabrikaları T.A.Ş.,Erdemir;Ereğli Demir Çelik,Metal
+FROTO,Ford Otomotiv Sanayi A.Ş.,Ford Otosan;Ford Otomotiv,Otomotiv
+TOASO,Tofaş Türk Otomobil Fabrikası A.Ş.,Tofaş,Otomotiv
+GARAN,Türkiye Garanti Bankası A.Ş.,Garanti;Garanti BBVA;Garanti Bankası,Bankacılık
+AKBNK,Akbank T.A.Ş.,Akbank,Bankacılık
+YKBNK,Yapı ve Kredi Bankası A.Ş.,Yapı Kredi;YapıKredi;Yapı Kredi Bankası,Bankacılık
+ISCTR,Türkiye İş Bankası A.Ş.,İş Bankası;İşbank,Bankacılık
+SISE,Türkiye Şişe ve Cam Fabrikaları A.Ş.,Şişecam,Cam ve Kimya
+PGSUS,Pegasus Hava Taşımacılığı A.Ş.,Pegasus;Pegasus Hava Yolları,Ulaştırma
+TCELL,Turkcell İletişim Hizmetleri A.Ş.,Turkcell,Telekomünikasyon
+TTKOM,Türk Telekomünikasyon A.Ş.,Türk Telekom,Telekomünikasyon
+KOZAL,Koza Altın İşletmeleri A.Ş.,Koza Altın;Koza,Madencilik
+ENKAI,Enka İnşaat ve Sanayi A.Ş.,Enka;Enka İnşaat,İnşaat
+ARCLK,Arçelik A.Ş.,Arçelik,Dayanıklı Tüketim
+MGROS,Migros Ticaret A.Ş.,Migros,Perakende
+PETKM,Petkim Petrokimya Holding A.Ş.,Petkim,Kimya
+SASA,SASA Polyester Sanayi A.Ş.,Sasa;Sasa Polyester,Kimya
+HEKTS,Hektaş Ticaret T.A.Ş.,Hektaş,Tarım Kimyasalları
+ASTOR,Astor Enerji A.Ş.,Astor;Astor Enerji,Elektrik Ekipmanları
+KONTR,Kontrolmatik Teknoloji Enerji ve Mühendislik A.Ş.,Kontrolmatik,Teknoloji ve Enerji
+ULKER,Ülker Bisküvi Sanayi A.Ş.,Ülker,Gıda
+TAVHL,TAV Havalimanları Holding A.Ş.,TAV;TAV Havalimanları,Ulaştırma
+DOAS,Doğuş Otomotiv Servis ve Ticaret A.Ş.,Doğuş Otomotiv,Otomotiv
+OTKAR,Otokar Otomotiv ve Savunma Sanayi A.Ş.,Otokar,Otomotiv ve Savunma
