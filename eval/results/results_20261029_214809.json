@@ -1,0 +1,4303 @@
+{
+  "eval_set": "/home/bora/Desktop/KAPRAG/eval/eval_set.jsonl",
+  "n_questions": 40,
+  "embedding_model": "BAAI/bge-m3",
+  "reranker": "BAAI/bge-reranker-v2-m3",
+  "llm": "ollama/qwen2.5:3b-instruct",
+  "prompt_version": "1.0",
+  "filter_accuracy": {
+    "ticker_acc": 1.0,
+    "year_acc": 0.975,
+    "both_acc": 0.975,
+    "misses": [
+      {
+        "id": "q22",
+        "parsed": [
+          [
+            "BIMAS"
+          ],
+          []
+        ],
+        "expected": [
+          [
+            "BIMAS"
+          ],
+          [
+            2025
+          ]
+        ]
+      }
+    ]
+  },
+  "retrieval": {
+    "dense|stem=off|boost=off": {
+      "hit@1": 0.5294117647058824,
+      "hit@3": 0.8823529411764706,
+      "hit@6": 0.8823529411764706,
+      "mrr": 0.6813725490196079,
+      "comparison_side_coverage": 0.6666666666666666,
+      "by_type": {
+        "comparison": {
+          "n": 6,
+          "hit@6": 0.8333333333333334
+        },
+        "factual_number": {
+          "n": 9,
+          "hit@6": 0.7777777777777778
+        },
+        "factual_text": {
+          "n": 6,
+          "hit@6": 1
+        },
+        "risk_summary": {
+          "n": 5,
+          "hit@6": 1
+        },
+        "table_lookup": {
+          "n": 8,
+          "hit@6": 0.875
+        }
+      },
+      "latency_ms": {
+        "parse_query": {
+          "mean": 0.7646617941110676,
+          "p95": 0.8389853000153379
+        },
+        "embed_query": {
+          "mean": 362.34420682352294,
+          "p95": 688.2614105490574
+        },
+        "dense_search": {
+          "mean": 84.7044828823367,
+          "p95": 136.2998869501098
+        }
+      },
+      "per_question": [
+        {
+          "id": "q01",
+          "type": "factual_number",
+          "first_relevant_rank": 3,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q02",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q03",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q04",
+          "type": "factual_number",
+          "first_relevant_rank": 3,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q05",
+          "type": "factual_number",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q06",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q07",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q08",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q09",
+          "type": "factual_number",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q10",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q11",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q12",
+          "type": "table_lookup",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q13",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q14",
+          "type": "table_lookup",
+          "first_relevant_rank": 3,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q15",
+          "type": "table_lookup",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q16",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q17",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q18",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q19",
+          "type": "factual_text",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q20",
+          "type": "factual_text",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q21",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q22",
+          "type": "factual_text",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q23",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q24",
+          "type": "risk_summary",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q25",
+          "type": "risk_summary",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q26",
+          "type": "risk_summary",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q27",
+          "type": "risk_summary",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q28",
+          "type": "risk_summary",
+          "first_relevant_rank": 3,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q29",
+          "type": "comparison",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q30",
+          "type": "comparison",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q31",
+          "type": "comparison",
+          "first_relevant_rank": 1,
+          "side_coverage": 0.5
+        },
+        {
+          "id": "q32",
+          "type": "comparison",
+          "first_relevant_rank": 3,
+          "side_coverage": 0.5
+        },
+        {
+          "id": "q33",
+          "type": "comparison",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q34",
+          "type": "comparison",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        }
+      ]
+    },
+    "dense|stem=off|boost=on": {
+      "hit@1": 0.4411764705882353,
+      "hit@3": 0.7941176470588235,
+      "hit@6": 0.8823529411764706,
+      "mrr": 0.6161764705882353,
+      "comparison_side_coverage": 0.4166666666666667,
+      "by_type": {
+        "comparison": {
+          "n": 6,
+          "hit@6": 0.6666666666666666
+        },
+        "factual_number": {
+          "n": 9,
+          "hit@6": 0.7777777777777778
+        },
+        "factual_text": {
+          "n": 6,
+          "hit@6": 1
+        },
+        "risk_summary": {
+          "n": 5,
+          "hit@6": 1
+        },
+        "table_lookup": {
+          "n": 8,
+          "hit@6": 1
+        }
+      },
+      "latency_ms": {
+        "parse_query": {
+          "mean": 0.6951184412654958,
+          "p95": 0.8257552000486612
+        },
+        "embed_query": {
+          "mean": 389.46547667640465,
+          "p95": 627.4029747996337
+        },
+        "dense_search": {
+          "mean": 76.88872173532539,
+          "p95": 130.1557708999553
+        }
+      },
+      "per_question": [
+        {
+          "id": "q01",
+          "type": "factual_number",
+          "first_relevant_rank": 5,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q02",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q03",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q04",
+          "type": "factual_number",
+          "first_relevant_rank": 3,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q05",
+          "type": "factual_number",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q06",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q07",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q08",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q09",
+          "type": "factual_number",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q10",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q11",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q12",
+          "type": "table_lookup",
+          "first_relevant_rank": 6,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q13",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q14",
+          "type": "table_lookup",
+          "first_relevant_rank": 3,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q15",
+          "type": "table_lookup",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q16",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q17",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q18",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q19",
+          "type": "factual_text",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q20",
+          "type": "factual_text",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q21",
+          "type": "factual_text",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q22",
+          "type": "factual_text",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q23",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q24",
+          "type": "risk_summary",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q25",
+          "type": "risk_summary",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q26",
+          "type": "risk_summary",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q27",
+          "type": "risk_summary",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q28",
+          "type": "risk_summary",
+          "first_relevant_rank": 3,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q29",
+          "type": "comparison",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q30",
+          "type": "comparison",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q31",
+          "type": "comparison",
+          "first_relevant_rank": 1,
+          "side_coverage": 0.5
+        },
+        {
+          "id": "q32",
+          "type": "comparison",
+          "first_relevant_rank": 4,
+          "side_coverage": 0.5
+        },
+        {
+          "id": "q33",
+          "type": "comparison",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q34",
+          "type": "comparison",
+          "first_relevant_rank": 3,
+          "side_coverage": 0.5
+        }
+      ]
+    },
+    "bm25|stem=off|boost=off": {
+      "hit@1": 0.5,
+      "hit@3": 0.6176470588235294,
+      "hit@6": 0.7352941176470589,
+      "mrr": 0.5754901960784313,
+      "comparison_side_coverage": 0.6666666666666666,
+      "by_type": {
+        "comparison": {
+          "n": 6,
+          "hit@6": 0.8333333333333334
+        },
+        "factual_number": {
+          "n": 9,
+          "hit@6": 0.7777777777777778
+        },
+        "factual_text": {
+          "n": 6,
+          "hit@6": 0.8333333333333334
+        },
+        "risk_summary": {
+          "n": 5,
+          "hit@6": 0.4
+        },
+        "table_lookup": {
+          "n": 8,
+          "hit@6": 0.75
+        }
+      },
+      "latency_ms": {
+        "parse_query": {
+          "mean": 0.6031174116555228,
+          "p95": 0.7396255502044369
+        },
+        "bm25_search": {
+          "mean": 3.9301384999816946,
+          "p95": 8.554233750464844
+        }
+      },
+      "per_question": [
+        {
+          "id": "q01",
+          "type": "factual_number",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q02",
+          "type": "factual_number",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q03",
+          "type": "factual_number",
+          "first_relevant_rank": 3,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q04",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q05",
+          "type": "factual_number",
+          "first_relevant_rank": 6,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q06",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q07",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q08",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q09",
+          "type": "factual_number",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q10",
+          "type": "table_lookup",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q11",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q12",
+          "type": "table_lookup",
+          "first_relevant_rank": 6,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q13",
+          "type": "table_lookup",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q14",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q15",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q16",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q17",
+          "type": "table_lookup",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q18",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q19",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q20",
+          "type": "factual_text",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q21",
+          "type": "factual_text",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q22",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q23",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q24",
+          "type": "risk_summary",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q25",
+          "type": "risk_summary",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q26",
+          "type": "risk_summary",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q27",
+          "type": "risk_summary",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q28",
+          "type": "risk_summary",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q29",
+          "type": "comparison",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q30",
+          "type": "comparison",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q31",
+          "type": "comparison",
+          "first_relevant_rank": 5,
+          "side_coverage": 0.5
+        },
+        {
+          "id": "q32",
+          "type": "comparison",
+          "first_relevant_rank": 5,
+          "side_coverage": 0.5
+        },
+        {
+          "id": "q33",
+          "type": "comparison",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q34",
+          "type": "comparison",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        }
+      ]
+    },
+    "bm25|stem=off|boost=on": {
+      "hit@1": 0.5,
+      "hit@3": 0.6176470588235294,
+      "hit@6": 0.6764705882352942,
+      "mrr": 0.5598039215686275,
+      "comparison_side_coverage": 0.5833333333333334,
+      "by_type": {
+        "comparison": {
+          "n": 6,
+          "hit@6": 0.6666666666666666
+        },
+        "factual_number": {
+          "n": 9,
+          "hit@6": 0.7777777777777778
+        },
+        "factual_text": {
+          "n": 6,
+          "hit@6": 0.8333333333333334
+        },
+        "risk_summary": {
+          "n": 5,
+          "hit@6": 0.4
+        },
+        "table_lookup": {
+          "n": 8,
+          "hit@6": 0.625
+        }
+      },
+      "latency_ms": {
+        "parse_query": {
+          "mean": 0.5084933824732348,
+          "p95": 0.5927707996761455
+        },
+        "bm25_search": {
+          "mean": 3.5211022941439296,
+          "p95": 8.497213250029743
+        }
+      },
+      "per_question": [
+        {
+          "id": "q01",
+          "type": "factual_number",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q02",
+          "type": "factual_number",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q03",
+          "type": "factual_number",
+          "first_relevant_rank": 3,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q04",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q05",
+          "type": "factual_number",
+          "first_relevant_rank": 6,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q06",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q07",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q08",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q09",
+          "type": "factual_number",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q10",
+          "type": "table_lookup",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q11",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q12",
+          "type": "table_lookup",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q13",
+          "type": "table_lookup",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q14",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q15",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q16",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q17",
+          "type": "table_lookup",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q18",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q19",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q20",
+          "type": "factual_text",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q21",
+          "type": "factual_text",
+          "first_relevant_rank": 3,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q22",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q23",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q24",
+          "type": "risk_summary",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q25",
+          "type": "risk_summary",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q26",
+          "type": "risk_summary",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q27",
+          "type": "risk_summary",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q28",
+          "type": "risk_summary",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q29",
+          "type": "comparison",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q30",
+          "type": "comparison",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q31",
+          "type": "comparison",
+          "first_relevant_rank": 5,
+          "side_coverage": 0.5
+        },
+        {
+          "id": "q32",
+          "type": "comparison",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q33",
+          "type": "comparison",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q34",
+          "type": "comparison",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        }
+      ]
+    },
+    "bm25|stem=on|boost=off": {
+      "hit@1": 0.5,
+      "hit@3": 0.6764705882352942,
+      "hit@6": 0.7647058823529411,
+      "mrr": 0.6039215686274509,
+      "comparison_side_coverage": 0.5,
+      "by_type": {
+        "comparison": {
+          "n": 6,
+          "hit@6": 0.6666666666666666
+        },
+        "factual_number": {
+          "n": 9,
+          "hit@6": 0.8888888888888888
+        },
+        "factual_text": {
+          "n": 6,
+          "hit@6": 0.8333333333333334
+        },
+        "risk_summary": {
+          "n": 5,
+          "hit@6": 0.6
+        },
+        "table_lookup": {
+          "n": 8,
+          "hit@6": 0.75
+        }
+      },
+      "latency_ms": {
+        "parse_query": {
+          "mean": 0.5227777646723553,
+          "p95": 0.606637749751826
+        },
+        "bm25_search": {
+          "mean": 4.307677058771814,
+          "p95": 8.793848400091516
+        }
+      },
+      "per_question": [
+        {
+          "id": "q01",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q02",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q03",
+          "type": "factual_number",
+          "first_relevant_rank": 4,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q04",
+          "type": "factual_number",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q05",
+          "type": "factual_number",
+          "first_relevant_rank": 4,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q06",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q07",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q08",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q09",
+          "type": "factual_number",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q10",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q11",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q12",
+          "type": "table_lookup",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q13",
+          "type": "table_lookup",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q14",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q15",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q16",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q17",
+          "type": "table_lookup",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q18",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q19",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q20",
+          "type": "factual_text",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q21",
+          "type": "factual_text",
+          "first_relevant_rank": 3,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q22",
+          "type": "factual_text",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q23",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q24",
+          "type": "risk_summary",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q25",
+          "type": "risk_summary",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q26",
+          "type": "risk_summary",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q27",
+          "type": "risk_summary",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q28",
+          "type": "risk_summary",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q29",
+          "type": "comparison",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q30",
+          "type": "comparison",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q31",
+          "type": "comparison",
+          "first_relevant_rank": 5,
+          "side_coverage": 0.5
+        },
+        {
+          "id": "q32",
+          "type": "comparison",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q33",
+          "type": "comparison",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q34",
+          "type": "comparison",
+          "first_relevant_rank": 1,
+          "side_coverage": 0.5
+        }
+      ]
+    },
+    "bm25|stem=on|boost=on": {
+      "hit@1": 0.5,
+      "hit@3": 0.6764705882352942,
+      "hit@6": 0.7647058823529411,
+      "mrr": 0.5990196078431372,
+      "comparison_side_coverage": 0.5,
+      "by_type": {
+        "comparison": {
+          "n": 6,
+          "hit@6": 0.6666666666666666
+        },
+        "factual_number": {
+          "n": 9,
+          "hit@6": 0.8888888888888888
+        },
+        "factual_text": {
+          "n": 6,
+          "hit@6": 0.8333333333333334
+        },
+        "risk_summary": {
+          "n": 5,
+          "hit@6": 0.6
+        },
+        "table_lookup": {
+          "n": 8,
+          "hit@6": 0.75
+        }
+      },
+      "latency_ms": {
+        "parse_query": {
+          "mean": 0.5193739705325296,
+          "p95": 0.603494850520292
+        },
+        "bm25_search": {
+          "mean": 4.31445573531164,
+          "p95": 9.143170250308682
+        }
+      },
+      "per_question": [
+        {
+          "id": "q01",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q02",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q03",
+          "type": "factual_number",
+          "first_relevant_rank": 4,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q04",
+          "type": "factual_number",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q05",
+          "type": "factual_number",
+          "first_relevant_rank": 4,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q06",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q07",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q08",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q09",
+          "type": "factual_number",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q10",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q11",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q12",
+          "type": "table_lookup",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q13",
+          "type": "table_lookup",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q14",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q15",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q16",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q17",
+          "type": "table_lookup",
+          "first_relevant_rank": 3,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q18",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q19",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q20",
+          "type": "factual_text",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q21",
+          "type": "factual_text",
+          "first_relevant_rank": 3,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q22",
+          "type": "factual_text",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q23",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q24",
+          "type": "risk_summary",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q25",
+          "type": "risk_summary",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q26",
+          "type": "risk_summary",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q27",
+          "type": "risk_summary",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q28",
+          "type": "risk_summary",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q29",
+          "type": "comparison",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q30",
+          "type": "comparison",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q31",
+          "type": "comparison",
+          "first_relevant_rank": 5,
+          "side_coverage": 0.5
+        },
+        {
+          "id": "q32",
+          "type": "comparison",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q33",
+          "type": "comparison",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q34",
+          "type": "comparison",
+          "first_relevant_rank": 1,
+          "side_coverage": 0.5
+        }
+      ]
+    },
+    "hybrid|stem=off|boost=off": {
+      "hit@1": 0.4411764705882353,
+      "hit@3": 0.7647058823529411,
+      "hit@6": 0.8823529411764706,
+      "mrr": 0.5975490196078431,
+      "comparison_side_coverage": 0.6666666666666666,
+      "by_type": {
+        "comparison": {
+          "n": 6,
+          "hit@6": 0.8333333333333334
+        },
+        "factual_number": {
+          "n": 9,
+          "hit@6": 0.7777777777777778
+        },
+        "factual_text": {
+          "n": 6,
+          "hit@6": 1
+        },
+        "risk_summary": {
+          "n": 5,
+          "hit@6": 1
+        },
+        "table_lookup": {
+          "n": 8,
+          "hit@6": 0.875
+        }
+      },
+      "latency_ms": {
+        "parse_query": {
+          "mean": 0.6993599411222985,
+          "p95": 0.8465922003324521
+        },
+        "embed_query": {
+          "mean": 364.90546764710365,
+          "p95": 679.6882134001407
+        },
+        "dense_search": {
+          "mean": 75.72769108823837,
+          "p95": 130.0352137500795
+        },
+        "bm25_search": {
+          "mean": 4.5759954412139505,
+          "p95": 10.674584299840713
+        },
+        "fusion": {
+          "mean": 0.0989991174398764,
+          "p95": 0.1772973990682658
+        }
+      },
+      "per_question": [
+        {
+          "id": "q01",
+          "type": "factual_number",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q02",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q03",
+          "type": "factual_number",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q04",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q05",
+          "type": "factual_number",
+          "first_relevant_rank": 3,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q06",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q07",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q08",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q09",
+          "type": "factual_number",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q10",
+          "type": "table_lookup",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q11",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q12",
+          "type": "table_lookup",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q13",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q14",
+          "type": "table_lookup",
+          "first_relevant_rank": 3,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q15",
+          "type": "table_lookup",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q16",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q17",
+          "type": "table_lookup",
+          "first_relevant_rank": 3,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q18",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q19",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q20",
+          "type": "factual_text",
+          "first_relevant_rank": 5,
+          "side_coverage": 0.5
+        },
+        {
+          "id": "q21",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q22",
+          "type": "factual_text",
+          "first_relevant_rank": 3,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q23",
+          "type": "factual_text",
+          "first_relevant_rank": 4,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q24",
+          "type": "risk_summary",
+          "first_relevant_rank": 6,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q25",
+          "type": "risk_summary",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q26",
+          "type": "risk_summary",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q27",
+          "type": "risk_summary",
+          "first_relevant_rank": 3,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q28",
+          "type": "risk_summary",
+          "first_relevant_rank": 3,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q29",
+          "type": "comparison",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q30",
+          "type": "comparison",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q31",
+          "type": "comparison",
+          "first_relevant_rank": 2,
+          "side_coverage": 0.5
+        },
+        {
+          "id": "q32",
+          "type": "comparison",
+          "first_relevant_rank": 5,
+          "side_coverage": 0.5
+        },
+        {
+          "id": "q33",
+          "type": "comparison",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q34",
+          "type": "comparison",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        }
+      ]
+    },
+    "hybrid|stem=off|boost=on": {
+      "hit@1": 0.4117647058823529,
+      "hit@3": 0.7352941176470589,
+      "hit@6": 0.8823529411764706,
+      "mrr": 0.5803921568627451,
+      "comparison_side_coverage": 0.6666666666666666,
+      "by_type": {
+        "comparison": {
+          "n": 6,
+          "hit@6": 0.8333333333333334
+        },
+        "factual_number": {
+          "n": 9,
+          "hit@6": 0.7777777777777778
+        },
+        "factual_text": {
+          "n": 6,
+          "hit@6": 1
+        },
+        "risk_summary": {
+          "n": 5,
+          "hit@6": 1
+        },
+        "table_lookup": {
+          "n": 8,
+          "hit@6": 0.875
+        }
+      },
+      "latency_ms": {
+        "parse_query": {
+          "mean": 0.7002966471565528,
+          "p95": 0.8223534999615367
+        },
+        "embed_query": {
+          "mean": 384.40283097059046,
+          "p95": 693.0969046501104
+        },
+        "dense_search": {
+          "mean": 75.9339940589277,
+          "p95": 130.20855854997532
+        },
+        "bm25_search": {
+          "mean": 4.595377794082785,
+          "p95": 10.80984229970454
+        },
+        "fusion": {
+          "mean": 0.0997593529866529,
+          "p95": 0.17784254969228638
+        }
+      },
+      "per_question": [
+        {
+          "id": "q01",
+          "type": "factual_number",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q02",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q03",
+          "type": "factual_number",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q04",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q05",
+          "type": "factual_number",
+          "first_relevant_rank": 3,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q06",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q07",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q08",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q09",
+          "type": "factual_number",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q10",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q11",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q12",
+          "type": "table_lookup",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q13",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q14",
+          "type": "table_lookup",
+          "first_relevant_rank": 3,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q15",
+          "type": "table_lookup",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q16",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q17",
+          "type": "table_lookup",
+          "first_relevant_rank": 4,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q18",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q19",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q20",
+          "type": "factual_text",
+          "first_relevant_rank": 5,
+          "side_coverage": 0.5
+        },
+        {
+          "id": "q21",
+          "type": "factual_text",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q22",
+          "type": "factual_text",
+          "first_relevant_rank": 3,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q23",
+          "type": "factual_text",
+          "first_relevant_rank": 4,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q24",
+          "type": "risk_summary",
+          "first_relevant_rank": 6,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q25",
+          "type": "risk_summary",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q26",
+          "type": "risk_summary",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q27",
+          "type": "risk_summary",
+          "first_relevant_rank": 3,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q28",
+          "type": "risk_summary",
+          "first_relevant_rank": 3,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q29",
+          "type": "comparison",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q30",
+          "type": "comparison",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q31",
+          "type": "comparison",
+          "first_relevant_rank": 2,
+          "side_coverage": 0.5
+        },
+        {
+          "id": "q32",
+          "type": "comparison",
+          "first_relevant_rank": 5,
+          "side_coverage": 0.5
+        },
+        {
+          "id": "q33",
+          "type": "comparison",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q34",
+          "type": "comparison",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        }
+      ]
+    },
+    "hybrid|stem=on|boost=off": {
+      "hit@1": 0.5294117647058824,
+      "hit@3": 0.7941176470588235,
+      "hit@6": 0.9117647058823529,
+      "mrr": 0.6774509803921569,
+      "comparison_side_coverage": 0.6666666666666666,
+      "by_type": {
+        "comparison": {
+          "n": 6,
+          "hit@6": 0.8333333333333334
+        },
+        "factual_number": {
+          "n": 9,
+          "hit@6": 0.8888888888888888
+        },
+        "factual_text": {
+          "n": 6,
+          "hit@6": 1
+        },
+        "risk_summary": {
+          "n": 5,
+          "hit@6": 1
+        },
+        "table_lookup": {
+          "n": 8,
+          "hit@6": 0.875
+        }
+      },
+      "latency_ms": {
+        "parse_query": {
+          "mean": 0.7021883824135704,
+          "p95": 0.8230446001562086
+        },
+        "embed_query": {
+          "mean": 348.0496946764266,
+          "p95": 572.6249035496039
+        },
+        "dense_search": {
+          "mean": 75.82871555889463,
+          "p95": 130.52922900096743
+        },
+        "bm25_search": {
+          "mean": 5.634330941200674,
+          "p95": 11.584652349984022
+        },
+        "fusion": {
+          "mean": 0.09916149998817299,
+          "p95": 0.1792774994555657
+        }
+      },
+      "per_question": [
+        {
+          "id": "q01",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q02",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q03",
+          "type": "factual_number",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q04",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q05",
+          "type": "factual_number",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q06",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q07",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q08",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q09",
+          "type": "factual_number",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q10",
+          "type": "table_lookup",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q11",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q12",
+          "type": "table_lookup",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q13",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q14",
+          "type": "table_lookup",
+          "first_relevant_rank": 3,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q15",
+          "type": "table_lookup",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q16",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q17",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q18",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q19",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q20",
+          "type": "factual_text",
+          "first_relevant_rank": 3,
+          "side_coverage": 0.5
+        },
+        {
+          "id": "q21",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q22",
+          "type": "factual_text",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q23",
+          "type": "factual_text",
+          "first_relevant_rank": 4,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q24",
+          "type": "risk_summary",
+          "first_relevant_rank": 6,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q25",
+          "type": "risk_summary",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q26",
+          "type": "risk_summary",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q27",
+          "type": "risk_summary",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q28",
+          "type": "risk_summary",
+          "first_relevant_rank": 4,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q29",
+          "type": "comparison",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q30",
+          "type": "comparison",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q31",
+          "type": "comparison",
+          "first_relevant_rank": 1,
+          "side_coverage": 0.5
+        },
+        {
+          "id": "q32",
+          "type": "comparison",
+          "first_relevant_rank": 5,
+          "side_coverage": 0.5
+        },
+        {
+          "id": "q33",
+          "type": "comparison",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q34",
+          "type": "comparison",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        }
+      ]
+    },
+    "hybrid|stem=on|boost=on": {
+      "hit@1": 0.5,
+      "hit@3": 0.7941176470588235,
+      "hit@6": 0.9117647058823529,
+      "mrr": 0.6627450980392157,
+      "comparison_side_coverage": 0.6666666666666666,
+      "by_type": {
+        "comparison": {
+          "n": 6,
+          "hit@6": 0.8333333333333334
+        },
+        "factual_number": {
+          "n": 9,
+          "hit@6": 0.8888888888888888
+        },
+        "factual_text": {
+          "n": 6,
+          "hit@6": 1
+        },
+        "risk_summary": {
+          "n": 5,
+          "hit@6": 1
+        },
+        "table_lookup": {
+          "n": 8,
+          "hit@6": 0.875
+        }
+      },
+      "latency_ms": {
+        "parse_query": {
+          "mean": 0.7261290587688135,
+          "p95": 0.8789902999524202
+        },
+        "embed_query": {
+          "mean": 326.0799524705362,
+          "p95": 575.4822481498195
+        },
+        "dense_search": {
+          "mean": 78.29335514703844,
+          "p95": 138.30631485038793
+        },
+        "bm25_search": {
+          "mean": 5.743409352870752,
+          "p95": 12.263255449761338
+        },
+        "fusion": {
+          "mean": 0.10063011757879661,
+          "p95": 0.18816139986483904
+        }
+      },
+      "per_question": [
+        {
+          "id": "q01",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q02",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q03",
+          "type": "factual_number",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q04",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q05",
+          "type": "factual_number",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q06",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q07",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q08",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q09",
+          "type": "factual_number",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q10",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q11",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q12",
+          "type": "table_lookup",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q13",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q14",
+          "type": "table_lookup",
+          "first_relevant_rank": 3,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q15",
+          "type": "table_lookup",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q16",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q17",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q18",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q19",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q20",
+          "type": "factual_text",
+          "first_relevant_rank": 3,
+          "side_coverage": 0.5
+        },
+        {
+          "id": "q21",
+          "type": "factual_text",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q22",
+          "type": "factual_text",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q23",
+          "type": "factual_text",
+          "first_relevant_rank": 4,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q24",
+          "type": "risk_summary",
+          "first_relevant_rank": 6,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q25",
+          "type": "risk_summary",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q26",
+          "type": "risk_summary",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q27",
+          "type": "risk_summary",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q28",
+          "type": "risk_summary",
+          "first_relevant_rank": 4,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q29",
+          "type": "comparison",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q30",
+          "type": "comparison",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q31",
+          "type": "comparison",
+          "first_relevant_rank": 1,
+          "side_coverage": 0.5
+        },
+        {
+          "id": "q32",
+          "type": "comparison",
+          "first_relevant_rank": 5,
+          "side_coverage": 0.5
+        },
+        {
+          "id": "q33",
+          "type": "comparison",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q34",
+          "type": "comparison",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        }
+      ]
+    },
+    "hybrid_rerank|stem=off|boost=off": {
+      "hit@1": 0.8235294117647058,
+      "hit@3": 0.9411764705882353,
+      "hit@6": 0.9411764705882353,
+      "mrr": 0.8774509803921569,
+      "comparison_side_coverage": 0.75,
+      "by_type": {
+        "comparison": {
+          "n": 6,
+          "hit@6": 0.8333333333333334
+        },
+        "factual_number": {
+          "n": 9,
+          "hit@6": 1
+        },
+        "factual_text": {
+          "n": 6,
+          "hit@6": 1
+        },
+        "risk_summary": {
+          "n": 5,
+          "hit@6": 1
+        },
+        "table_lookup": {
+          "n": 8,
+          "hit@6": 0.875
+        }
+      },
+      "latency_ms": {
+        "parse_query": {
+          "mean": 0.6010425000193422,
+          "p95": 0.6822418002684572
+        },
+        "embed_query": {
+          "mean": 291.4860667941973,
+          "p95": 613.742913000533
+        },
+        "dense_search": {
+          "mean": 77.1492380293988,
+          "p95": 130.9334553998724
+        },
+        "bm25_search": {
+          "mean": 4.6556610588114005,
+          "p95": 11.57175279972762
+        },
+        "fusion": {
+          "mean": 0.10329002950183007,
+          "p95": 0.1830054997753905
+        },
+        "rerank": {
+          "mean": 24795.624381970516,
+          "p95": 44016.32122999972
+        }
+      },
+      "per_question": [
+        {
+          "id": "q01",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q02",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q03",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q04",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q05",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q06",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q07",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q08",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q09",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q10",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q11",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q12",
+          "type": "table_lookup",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q13",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q14",
+          "type": "table_lookup",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q15",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q16",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q17",
+          "type": "table_lookup",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q18",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q19",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q20",
+          "type": "factual_text",
+          "first_relevant_rank": 3,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q21",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q22",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q23",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q24",
+          "type": "risk_summary",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q25",
+          "type": "risk_summary",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q26",
+          "type": "risk_summary",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q27",
+          "type": "risk_summary",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q28",
+          "type": "risk_summary",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q29",
+          "type": "comparison",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q30",
+          "type": "comparison",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q31",
+          "type": "comparison",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q32",
+          "type": "comparison",
+          "first_relevant_rank": 1,
+          "side_coverage": 0.5
+        },
+        {
+          "id": "q33",
+          "type": "comparison",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q34",
+          "type": "comparison",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        }
+      ]
+    },
+    "hybrid_rerank|stem=off|boost=on": {
+      "hit@1": 0.6764705882352942,
+      "hit@3": 0.8823529411764706,
+      "hit@6": 0.9117647058823529,
+      "mrr": 0.7754901960784314,
+      "comparison_side_coverage": 0.6666666666666666,
+      "by_type": {
+        "comparison": {
+          "n": 6,
+          "hit@6": 0.6666666666666666
+        },
+        "factual_number": {
+          "n": 9,
+          "hit@6": 0.8888888888888888
+        },
+        "factual_text": {
+          "n": 6,
+          "hit@6": 1
+        },
+        "risk_summary": {
+          "n": 5,
+          "hit@6": 1
+        },
+        "table_lookup": {
+          "n": 8,
+          "hit@6": 1
+        }
+      },
+      "latency_ms": {
+        "parse_query": {
+          "mean": 0.6809882353242275,
+          "p95": 0.8323169497543859
+        },
+        "embed_query": {
+          "mean": 322.79489152955756,
+          "p95": 547.1943050005847
+        },
+        "dense_search": {
+          "mean": 77.09459014701197,
+          "p95": 140.63072390026718
+        },
+        "bm25_search": {
+          "mean": 4.721216205940864,
+          "p95": 11.134197749788651
+        },
+        "fusion": {
+          "mean": 0.10478232348652776,
+          "p95": 0.18954294973809735
+        },
+        "rerank": {
+          "mean": 1761.927047411759,
+          "p95": 7752.633563199879
+        }
+      },
+      "per_question": [
+        {
+          "id": "q01",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q02",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q03",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q04",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q05",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q06",
+          "type": "factual_number",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q07",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q08",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q09",
+          "type": "factual_number",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q10",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q11",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q12",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q13",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q14",
+          "type": "table_lookup",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q15",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q16",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q17",
+          "type": "table_lookup",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q18",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q19",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q20",
+          "type": "factual_text",
+          "first_relevant_rank": 3,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q21",
+          "type": "factual_text",
+          "first_relevant_rank": 5,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q22",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q23",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q24",
+          "type": "risk_summary",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q25",
+          "type": "risk_summary",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q26",
+          "type": "risk_summary",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q27",
+          "type": "risk_summary",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q28",
+          "type": "risk_summary",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q29",
+          "type": "comparison",
+          "first_relevant_rank": 3,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q30",
+          "type": "comparison",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q31",
+          "type": "comparison",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q32",
+          "type": "comparison",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q33",
+          "type": "comparison",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q34",
+          "type": "comparison",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        }
+      ]
+    },
+    "hybrid_rerank|stem=on|boost=off": {
+      "hit@1": 0.8235294117647058,
+      "hit@3": 0.9411764705882353,
+      "hit@6": 0.9411764705882353,
+      "mrr": 0.8774509803921569,
+      "comparison_side_coverage": 0.75,
+      "by_type": {
+        "comparison": {
+          "n": 6,
+          "hit@6": 0.8333333333333334
+        },
+        "factual_number": {
+          "n": 9,
+          "hit@6": 1
+        },
+        "factual_text": {
+          "n": 6,
+          "hit@6": 1
+        },
+        "risk_summary": {
+          "n": 5,
+          "hit@6": 1
+        },
+        "table_lookup": {
+          "n": 8,
+          "hit@6": 0.875
+        }
+      },
+      "latency_ms": {
+        "parse_query": {
+          "mean": 0.6256939705321308,
+          "p95": 0.8072494997577451
+        },
+        "embed_query": {
+          "mean": 308.14169244120103,
+          "p95": 585.8102702502492
+        },
+        "dense_search": {
+          "mean": 77.75782770586909,
+          "p95": 138.68958835028025
+        },
+        "bm25_search": {
+          "mean": 5.8890702057664495,
+          "p95": 12.105987549603011
+        },
+        "fusion": {
+          "mean": 0.10634979419003632,
+          "p95": 0.19115404938929714
+        },
+        "rerank": {
+          "mean": 3782.270066970528,
+          "p95": 7866.88304575
+        }
+      },
+      "per_question": [
+        {
+          "id": "q01",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q02",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q03",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q04",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q05",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q06",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q07",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q08",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q09",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q10",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q11",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q12",
+          "type": "table_lookup",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q13",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q14",
+          "type": "table_lookup",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q15",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q16",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q17",
+          "type": "table_lookup",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q18",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q19",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q20",
+          "type": "factual_text",
+          "first_relevant_rank": 3,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q21",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q22",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q23",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q24",
+          "type": "risk_summary",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q25",
+          "type": "risk_summary",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q26",
+          "type": "risk_summary",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q27",
+          "type": "risk_summary",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q28",
+          "type": "risk_summary",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q29",
+          "type": "comparison",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q30",
+          "type": "comparison",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q31",
+          "type": "comparison",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q32",
+          "type": "comparison",
+          "first_relevant_rank": 1,
+          "side_coverage": 0.5
+        },
+        {
+          "id": "q33",
+          "type": "comparison",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q34",
+          "type": "comparison",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        }
+      ]
+    },
+    "hybrid_rerank|stem=on|boost=on": {
+      "hit@1": 0.6764705882352942,
+      "hit@3": 0.8823529411764706,
+      "hit@6": 0.9117647058823529,
+      "mrr": 0.7656862745098039,
+      "comparison_side_coverage": 0.6666666666666666,
+      "by_type": {
+        "comparison": {
+          "n": 6,
+          "hit@6": 0.6666666666666666
+        },
+        "factual_number": {
+          "n": 9,
+          "hit@6": 0.8888888888888888
+        },
+        "factual_text": {
+          "n": 6,
+          "hit@6": 1
+        },
+        "risk_summary": {
+          "n": 5,
+          "hit@6": 1
+        },
+        "table_lookup": {
+          "n": 8,
+          "hit@6": 1
+        }
+      },
+      "latency_ms": {
+        "parse_query": {
+          "mean": 0.7027148823159651,
+          "p95": 0.8457036495656212
+        },
+        "embed_query": {
+          "mean": 357.610059382376,
+          "p95": 682.0387599002061
+        },
+        "dense_search": {
+          "mean": 76.9147797940979,
+          "p95": 133.0178792997685
+        },
+        "bm25_search": {
+          "mean": 5.801081323464613,
+          "p95": 11.824542949852907
+        },
+        "fusion": {
+          "mean": 0.10298217651271603,
+          "p95": 0.18862134988921753
+        },
+        "rerank": {
+          "mean": 297.6235824116349,
+          "p95": 1822.1659713999516
+        }
+      },
+      "per_question": [
+        {
+          "id": "q01",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q02",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q03",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q04",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q05",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q06",
+          "type": "factual_number",
+          "first_relevant_rank": 3,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q07",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q08",
+          "type": "factual_number",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q09",
+          "type": "factual_number",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q10",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q11",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q12",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q13",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q14",
+          "type": "table_lookup",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q15",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q16",
+          "type": "table_lookup",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q17",
+          "type": "table_lookup",
+          "first_relevant_rank": 3,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q18",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q19",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q20",
+          "type": "factual_text",
+          "first_relevant_rank": 3,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q21",
+          "type": "factual_text",
+          "first_relevant_rank": 5,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q22",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q23",
+          "type": "factual_text",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q24",
+          "type": "risk_summary",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q25",
+          "type": "risk_summary",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q26",
+          "type": "risk_summary",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q27",
+          "type": "risk_summary",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q28",
+          "type": "risk_summary",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q29",
+          "type": "comparison",
+          "first_relevant_rank": 3,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q30",
+          "type": "comparison",
+          "first_relevant_rank": 1,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q31",
+          "type": "comparison",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q32",
+          "type": "comparison",
+          "first_relevant_rank": 2,
+          "side_coverage": 1.0
+        },
+        {
+          "id": "q33",
+          "type": "comparison",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        },
+        {
+          "id": "q34",
+          "type": "comparison",
+          "first_relevant_rank": null,
+          "side_coverage": 0.0
+        }
+      ]
+    }
+  },
+  "generation": {
+    "mode": "hybrid_rerank",
+    "numeric_faithfulness": 0.5789473684210527,
+    "unverified_rate": 0.20512820512820512,
+    "unanswerable_handling": 1,
+    "false_refusal_rate": 0.08823529411764706,
+    "citation_rate": 0.7647058823529411,
+    "errors": 0,
+    "latency_ms": {
+      "parse_query": {
+        "mean": 0.6124999999999999,
+        "p95": 0.7
+      },
+      "embed_query": {
+        "mean": 342.485,
+        "p95": 628.635
+      },
+      "dense_search": {
+        "mean": 75.21,
+        "p95": 131.35999999999999
+      },
+      "bm25_search": {
+        "mean": 4.2525,
+        "p95": 10.939999999999998
+      },
+      "fusion": {
+        "mean": 0.10750000000000001,
+        "p95": 0.2
+      },
+      "rerank": {
+        "mean": 1044.5700000000002,
+        "p95": 888.4349999999496
+      },
+      "build_prompt": {
+        "mean": 0.061111111111111116,
+        "p95": 0.1
+      },
+      "generate": {
+        "mean": 77524.85277777778,
+        "p95": 142938.775
+      },
+      "verify_numbers": {
+        "mean": 2.091666666666667,
+        "p95": 3.775
+      },
+      "total": {
+        "mean": 71268.2775,
+        "p95": 143527.75999999998
+      }
+    },
+    "rows": [
+      {
+        "id": "q01",
+        "type": "factual_number",
+        "answer": "Aselsan'ın 2025 yılı hasılatı, 31 Aralık 2025 itibariyle 180,4 milyar TL olarak gerçekleşmiştir. [ASELS 2025 faaliyet_raporu s.17] — Not: Bu bilgi sağlanan belgelerde yer almıyor\n\nNot: Bu yanıt yalnızca bilgilendirme amaçlı bir analizdir, yatırım tavsiyesi değildir.",
+        "error": null,
+        "expected_numbers": [
+          "180,4 Milyar TL"
+        ],
+        "found_numbers": [
+          "180,4 Milyar TL"
+        ],
+        "n_numbers": 2,
+        "unverified": [],
+        "refused": true,
+        "citations": [
+          "[ASELS 2025 faaliyet_raporu s.17]"
+        ]
+      },
+      {
+        "id": "q02",
+        "type": "factual_number",
+        "answer": "ASELSAN Elektronik Sanayi ve Ticaret A.Ş. 2024 yılında işe alınan personel sayısı 2.506, işten ayrılan personel sayısı 1.069 kişidir.\n\nNot: Bu yanıt yalnızca bilgilendirme amaçlı bir analizdir, yatırım tavsiyesi değildir.",
+        "error": null,
+        "expected_numbers": [
+          "2.506",
+          "1.069"
+        ],
+        "found_numbers": [
+          "2.506",
+          "1.069"
+        ],
+        "n_numbers": 2,
+        "unverified": [],
+        "refused": false,
+        "citations": []
+      },
+      {
+        "id": "q03",
+        "type": "factual_number",
+        "answer": "THY 2025 yılında toplam 92,6 milyon yolcu taşıdı. Bu bilgi [THYAO 2025 faaliyet_raporu s.10] kaynaklarından elde edilmiştir.\n\nNot: Bu yanıt yalnızca bilgilendirme amaçlı bir analizdir, yatırım tavsiyesi değildir.",
+        "error": null,
+        "expected_numbers": [
+          "92,6 milyon",
+          "92,6 Milyon"
+        ],
+        "found_numbers": [
+          "92,6 milyon",
+          "92,6 Milyon"
+        ],
+        "n_numbers": 1,
+        "unverified": [],
+        "refused": false,
+        "citations": [
+          "[THYAO 2025 faaliyet_raporu s.10]"
+        ]
+      },
+      {
+        "id": "q04",
+        "type": "factual_number",
+        "answer": "101.663 [BIMAS 2025 faaliyet_raporu s.31] — Türkiye konsolide verileri\n\nNot: Bu yanıt yalnızca bilgilendirme amaçlı bir analizdir, yatırım tavsiyesi değildir.",
+        "error": null,
+        "expected_numbers": [
+          "101.663"
+        ],
+        "found_numbers": [
+          "101.663"
+        ],
+        "n_numbers": 1,
+        "unverified": [],
+        "refused": false,
+        "citations": [
+          "[BIMAS 2025 faaliyet_raporu s.31]"
+        ]
+      },
+      {
+        "id": "q05",
+        "type": "factual_number",
+        "answer": "18,1 milyar TL\n\nNot: Bu yanıt yalnızca bilgilendirme amaçlı bir analizdir, yatırım tavsiyesi değildir.",
+        "error": null,
+        "expected_numbers": [
+          "18,1 milyar TL"
+        ],
+        "found_numbers": [
+          "18,1 milyar TL"
+        ],
+        "n_numbers": 1,
+        "unverified": [],
+        "refused": false,
+        "citations": []
+      },
+      {
+        "id": "q06",
+        "type": "factual_number",
+        "answer": "AJet markası 2024 yılında yaklaşık 134.954 yolcu taşıdı. Bu bilgi, [THYAO 2024 faaliyet_raporu s.8] metin bölümünden elde edilebilir.\n\nNot: Bu yanıt yalnızca bilgilendirme amaçlı bir analizdir, yatırım tavsiyesi değildir.",
+        "error": null,
+        "expected_numbers": [
+          "21,5 milyon"
+        ],
+        "found_numbers": [],
+        "n_numbers": 1,
+        "unverified": [],
+        "refused": false,
+        "citations": [
+          "[THYAO 2024 faaliyet_raporu s.8]"
+        ]
+      },
+      {
+        "id": "q07",
+        "type": "factual_number",
+        "answer": "Aselsan'in Ar-Ge merkezlerinde 2025 itibarıyla toplam 9.985 kişi görev almaktadır. Bu bilgi, [ASELS 2025 faaliyet_raporu s.15-16] kaynaklarından elde edilebilir.\n\nNot: Bu yanıt yalnızca bilgilendirme amaçlı bir analizdir, yatırım tavsiyesi değildir.",
+        "error": null,
+        "expected_numbers": [
+          "9.985"
+        ],
+        "found_numbers": [
+          "9.985"
+        ],
+        "n_numbers": 1,
+        "unverified": [],
+        "refused": false,
+        "citations": [
+          "[ASELS 2025 faaliyet_raporu s.15-16]"
+        ]
+      },
+      {
+        "id": "q08",
+        "type": "factual_number",
+        "answer": "BİM Fas operasyonunun 2025 sonunda mağaza sayısı 933'tür. [BIMAS 2025 faaliyet_raporu s.12] — Türkçe\n\nNot: Bu yanıt yalnızca bilgilendirme amaçlı bir analizdir, yatırım tavsiyesi değildir.",
+        "error": null,
+        "expected_numbers": [
+          "933"
+        ],
+        "found_numbers": [
+          "933"
+        ],
+        "n_numbers": 1,
+        "unverified": [],
+        "refused": false,
+        "citations": [
+          "[BIMAS 2025 faaliyet_raporu s.12]"
+        ]
+      },
+      {
+        "id": "q09",
+        "type": "factual_number",
+        "answer": "Turkish Airlines'nin 2025 yılında toplam geliri, 1 trilyon ABD doları ile karşılaştırıldı. Belirtilen raporlar, 2025 yılında havacılık sektörünün dünya ticaretinde ve turizm sektöründe konumunu güçlendirdiğini gösterdi.\n\nNote: This answer is analysis only and is not investment advice.",
+        "error": null,
+        "expected_numbers": [
+          "24,1 milyar"
+        ],
+        "found_numbers": [],
+        "n_numbers": 1,
+        "unverified": [],
+        "refused": false,
+        "citations": []
+      },
+      {
+        "id": "q10",
+        "type": "table_lookup",
+        "answer": "THYAO'nun 31 Aralık 2025 itibarıyla konsolide toplam varlıkları 1.996.745 milyon TL'dir. [THYAO 2025 finansal_rapor s.9 doc_type s.9] — Bu bilgi, THYAO'nun 31 Aralık 2025 itibarında konsolide toplam varlıkları 1.996.745 milyon TL olduğunu gösterir.\n\nNot: Bu yanıt yalnızca bilgilendirme amaçlı bir analizdir, yatırım tavsiyesi değildir.",
+        "error": null,
+        "expected_numbers": [
+          "1.996.745"
+        ],
+        "found_numbers": [
+          "1.996.745"
+        ],
+        "n_numbers": 4,
+        "unverified": [],
+        "refused": false,
+        "citations": [
+          "[THYAO 2025 finansal_rapor s.9 doc_type s.9]"
+        ]
+      },
+      {
+        "id": "q11",
+        "type": "table_lookup",
+        "answer": "Türk Hava Yolları'nın 2025 yılı pay başına kar 85,60 kuruş oldu. Bu bilgi, [THYAO 2025 finansal_rapor s.11 doc_type tablo] belgelerinde yer almaktadır.\n\nNot: Bu yanıt yalnızca bilgilendirme amaçlı bir analizdir, yatırım tavsiyesi değildir.",
+        "error": null,
+        "expected_numbers": [
+          "85,60"
+        ],
+        "found_numbers": [
+          "85,60"
+        ],
+        "n_numbers": 1,
+        "unverified": [],
+        "refused": false,
+        "citations": [
+          "[THYAO 2025 finansal_rapor s.11 doc_type tablo]"
+        ]
+      },
+      {
+        "id": "q12",
+        "type": "table_lookup",
+        "answer": "THY'nin 2025'te akaryakıt gideri 240.599 milyon TL oldu. [THYAO 2025 finansal_rapor s.68 doc_type tablo 1 Ocak - 31 Aralık 2025]\n\nNot: Bu yanıt yalnızca bilgilendirme amaçlı bir analizdir, yatırım tavsiyesi değildir.",
+        "error": null,
+        "expected_numbers": [
+          "240.599",
+          "201.778"
+        ],
+        "found_numbers": [
+          "240.599"
+        ],
+        "n_numbers": 1,
+        "unverified": [],
+        "refused": false,
+        "citations": [
+          "[THYAO 2025 finansal_rapor s.68 doc_type tablo 1 Ocak - 31 Aralık 2025]"
+        ]
+      },
+      {
+        "id": "q13",
+        "type": "table_lookup",
+        "answer": "Turkish Airlines'in 2024 yılında tüketilen jet yakıtları (ABD Doları) 6.163 bin TL'dir. Yakıt tüketiminin birim fiyatı (ABD Doları / Ton) 1.144 ABD Doları/Ton'dur.\n\nNote: This answer is analysis only and is not investment advice.",
+        "error": null,
+        "expected_numbers": [
+          "7.000",
+          "880"
+        ],
+        "found_numbers": [],
+        "n_numbers": 2,
+        "unverified": [],
+        "refused": false,
+        "citations": []
+      },
+      {
+        "id": "q14",
+        "type": "table_lookup",
+        "answer": "| Şirket | Yıl | Kalem | Değer | Kaynak |\n| --- | --- | --- | --- | --- |\n| BİM Birleşik Mağazalar A.Ş. | 2025 | KAP | 43,5 milyar TL | [BIMAS 2025 faaliyet_raporu s.19] |\n\nNot: Bu yanıt yalnızca bilgilendirme amaçlı bir analizdir, yatırım tavsiyesi değildir.",
+        "error": null,
+        "expected_numbers": [
+          "43.485",
+          "43,5 milyar TL"
+        ],
+        "found_numbers": [
+          "43,5 milyar TL"
+        ],
+        "n_numbers": 1,
+        "unverified": [],
+        "refused": false,
+        "citations": [
+          "[BIMAS 2025 faaliyet_raporu s.19]"
+        ]
+      },
+      {
+        "id": "q15",
+        "type": "table_lookup",
+        "answer": "Aselsan'ın 2025 sonu itibarıyla enflasyona göre düzeltilmiş sermayesi 37.643.417 TL'dir. Bu bilgi [ASELS 2025 faaliyet_raporu s.8] kaynaklarından elde edilmiştir.\n\nNot: Bu yanıt yalnızca bilgilendirme amaçlı bir analizdir, yatırım tavsiyesi değildir.",
+        "error": null,
+        "expected_numbers": [
+          "37.643.417"
+        ],
+        "found_numbers": [
+          "37.643.417"
+        ],
+        "n_numbers": 1,
+        "unverified": [],
+        "refused": false,
+        "citations": [
+          "[ASELS 2025 faaliyet_raporu s.8]"
+        ]
+      },
+      {
+        "id": "q16",
+        "type": "table_lookup",
+        "answer": "| Şirket | Yıl | Kalem | Değer | Kaynak |\n|---|---|---|---|---|\n| ASELSAN Elektronik Sanayi ve Ticaret A.Ş. | 2025 | 32.216 + 1.018.606 + 97.723 + 28.153 + 7.698 + 34.817 = 1.644.567 Bin TL | [ASELS 2025 faaliyet_raporu s.19 doc_type metin s.19] |\n\nNot: Bu yanıt yalnızca bilgilendirme amaçlı bir analizdir, yatırım tavsiyesi değildir.",
+        "error": null,
+        "expected_numbers": [
+          "97.723"
+        ],
+        "found_numbers": [
+          "97.723"
+        ],
+        "n_numbers": 7,
+        "unverified": [
+          "1.644.567 Bin TL"
+        ],
+        "refused": false,
+        "citations": [
+          "[ASELS 2025 faaliyet_raporu s.19 doc_type metin s.19]"
+        ]
+      },
+      {
+        "id": "q17",
+        "type": "table_lookup",
+        "answer": "| Şirket | Yıl | Kalem | Değer | Kaynak |\n| --- | --- | --- | --- | --- |\n| BİM Birleşik Mağazalar A.Ş. | 2024 | Gelir Tablosu Değişim (%) Bilanço (Milyon TL)* (%) | 161.807 | [BIMAS 2024 faaliyet_raporu s.19 doc_type s.19] |\n\nNot: Bu bilgi sağlanan belgelerde yer almıyor.\n\nNot: Bu yanıt yalnızca bilgilendirme amaçlı bir analizdir, yatırım tavsiyesi değildir.",
+        "error": null,
+        "expected_numbers": [
+          "519.567",
+          "520 milyar TL"
+        ],
+        "found_numbers": [],
+        "n_numbers": 1,
+        "unverified": [],
+        "refused": true,
+        "citations": [
+          "[BIMAS 2024 faaliyet_raporu s.19 doc_type s.19]"
+        ]
+      },
+      {
+        "id": "q18",
+        "type": "factual_text",
+        "answer": "Türk Hava Yolları'nın 2025 konsolide finansal tablolarını PwC Bağımsız Denetim ve Serbest Muhasebeci Mali Müşavirlik A.Ş. tarafından denetledi. [THYAO 2025 finansal_rapor s.7 doc_type finansal_rapor s.7-9]\n\nNot: Bu yanıt yalnızca bilgilendirme amaçlı bir analizdir, yatırım tavsiyesi değildir.",
+        "error": null,
+        "expected_numbers": [],
+        "found_numbers": [],
+        "n_numbers": 0,
+        "unverified": [],
+        "refused": false,
+        "citations": [
+          "[THYAO 2025 finansal_rapor s.7 doc_type finansal_rapor s.7-9]"
+        ]
+      },
+      {
+        "id": "q19",
+        "type": "factual_text",
+        "answer": "| Şirket | Yıl | Kalem | Değer | Kaynak |\n| --- | --- | --- | --- | --- |\n| ASELSAN Elektronik Sanayi ve Ticaret A.Ş. | 2024 | KAP duyurusu | Prof. Dr. Ercümend ARVAS | [ASELS 2024 faaliyet_raporu s.65 doc_type s.65] |\n\nProf. Dr. Ercümend ARVAS, 2024 yılında ASELSAN'ın yönetim kurulu başkanıydı.\n\nNot: Bu yanıt yalnızca bilgilendirme amaçlı bir analizdir, yatırım tavsiyesi değildir.",
+        "error": null,
+        "expected_numbers": [],
+        "found_numbers": [],
+        "n_numbers": 0,
+        "unverified": [],
+        "refused": false,
+        "citations": [
+          "[ASELS 2024 faaliyet_raporu s.65 doc_type s.65]"
+        ]
+      },
+      {
+        "id": "q20",
+        "type": "factual_text",
+        "answer": "BİM'in genel merkezi Sancaktepe/İstanbul ilçesinde bulunuyor. [BIMAS 2024 faaliyet_raporu s.66] — Sancaktepe/ İstanbul\n\nNot: Bu yanıt yalnızca bilgilendirme amaçlı bir analizdir, yatırım tavsiyesi değildir.",
+        "error": null,
+        "expected_numbers": [],
+        "found_numbers": [],
+        "n_numbers": 0,
+        "unverified": [],
+        "refused": false,
+        "citations": [
+          "[BIMAS 2024 faaliyet_raporu s.66]"
+        ]
+      },
+      {
+        "id": "q21",
+        "type": "factual_text",
+        "answer": "Aselsan'ın kâr dağıtım politikası, 2025 raporuna göre aşağıdaki şekilde özetlenebilir:\n\n1. Kâr dağıtım politikası, 2016 yılından itibaren takip edilen olağan genel kurul toplantısında pay sahiplerine sunulmuştur.\n2. Elde edilen net kârın en az %10’u tutarında kâr dağıtımı hedeflenmektedir.\n3. Şirketin internet sitesinde yayınlanan kâr payı dağıtım politikası, elde edilen dönem kârı esas alınarak hesaplanan dağıtılabilir kâr tutarı üzerinden hesaplanır.\n4. Hesaplanan dağıtılabilir kâr tutarı, mevzuat ve esas sözleşme hükümleri ile şirketin özsermaye oranı, sürdürülebilir büyüme hızı, piyasa değeri, net işletme sermayesi ihtiyacı, temettü verimliliği ve nakit akımları dikkate alınarak hesaplanır.\n5. Şirketin kâr dağıtım politikası, mevcut yasal düzenlemeler çerçevesinde hazırlanmış finansal tablolarında yer alan dönem kârı esas alınarak hesaplanır.\n6. Hesaplanan kâr payı, tespit edilen kâr payı dağıtım tutarları, yasal süreler içinde, Genel Kurul'un belirlediği tarihte pay sahiplerine dağıtılır.\n\nNot: Bu yanıt yalnızca bilgilendirme amaçlı bir analizdir, yatırım tavsiyesi değildir.",
+        "error": null,
+        "expected_numbers": [
+          "%10"
+        ],
+        "found_numbers": [
+          "%10"
+        ],
+        "n_numbers": 1,
+        "unverified": [],
+        "refused": false,
+        "citations": []
+      },
+      {
+        "id": "q22",
+        "type": "factual_text",
+        "answer": "| Şirket | Yıl | Kalem | Değer | Kaynak |\n| BİM Birleşik Mağazalar A.Ş. | 2025 | KAP | Helios Investment Partners LLP | [BIMAS 2025 faaliyet_raporu s.19] |\n\nBİM'in Fas operasyonunda ortağı Helios Investment Partners LLP'dir ve bu ortağın payı %35'dir.\n\nNot: Bu yanıt yalnızca bilgilendirme amaçlı bir analizdir, yatırım tavsiyesi değildir.",
+        "error": null,
+        "expected_numbers": [
+          "%35"
+        ],
+        "found_numbers": [
+          "%35"
+        ],
+        "n_numbers": 1,
+        "unverified": [],
+        "refused": false,
+        "citations": [
+          "[BIMAS 2025 faaliyet_raporu s.19]"
+        ]
+      },
+      {
+        "id": "q23",
+        "type": "factual_text",
+        "answer": "| Şirket | Yıl | Kalem | Değer | Kaynak |\n| --- | --- | --- | --- | --- |\n| Türk Hava Yolları A.O. | 2025 | Yönetim Kurulu Görevlendirmeleri | Prof. Dr. Ahmet Bolat'ın Yönetim Kurulu Başkanı ve Sn. Şekib Avdagiç'ın Yönetim Kurulu Başkan Vekili olarak atanması | [THYAO 2025 faaliyet_raporu s.138 doc_type metin] |\n\n**Kaynak: [THYAO 2025 faaliyet_raporu s.138 doc_type metin]**\n\nNote: This answer is analysis only and is not investment advice.",
+        "error": null,
+        "expected_numbers": [],
+        "found_numbers": [],
+        "n_numbers": 0,
+        "unverified": [],
+        "refused": false,
+        "citations": [
+          "[THYAO 2025 faaliyet_raporu s.138 doc_type metin]"
+        ]
+      },
+      {
+        "id": "q24",
+        "type": "risk_summary",
+        "answer": "THY'nin 2024 faaliyet raporunda öne çıkan finansal riskler şunlardır:\n\n1. **Nakit Akım Riski**: Operasyonel faaliyetler ve finansman işlemlerinden kaynaklanan nakit giriş/çıkışlarında oluşabilecek uyumsuzlukların likiditeyi ve dolayısıyla ortaklık faaliyetlerini sekteye uğratması.\n\n2. **Akaryakıt Fiyatı Riski**: Jet yakıtı fiyatındaki dalgalanmaların nakit akışı ve kârlılık üzerindeki etkisi.\n\n3. **Faiz Oranı Riski**: Faiz oranlarında yaşanan değişimlerin finansman maliyetleri ve portföy getirileri üzerindeki etkisi.\n\n4. **Döviz Kuru Riski**: Gelirleri ve giderleri oluşturan farklı kompozisyonlardaki para birimlerinin değerlerinde oluşabilecek değişimlerin nakit akışı ve kârlılık üzerindeki etkisi.\n\n5. **Karşı Taraf Riski**: Gerçekleştirilen finansal işlemlere karşı taraf olan kurumların temerrüde düşmesi durumunda yükümlülüklerini yerine getirememesi ve bunun sonucunda oluşabilecek kayıplar.\n\nBu risklerin yönetimi için THY, belirlenen söz konusu finansal risk unsurlarının yönetimi için, her risk özelinde riskten korunma stratejileri geliştirilmekte ve uygulamaya konulmaktadır. Finansal risklerin yönetilebilir bir seviyede tutulmaları adına riskten doğal korunma yöntemlerine öncelik verilirken, bu yöntemlerin kullanılmasının mümkün olmadığı durumlarda ise finansal işlemler yapılabilmektedir. Söz konusu finansal işlemler sayesinde öngörülebilirliğin artırılması ve dalgalanmalar sonucu oluşacak finansal etkinin makul ve yönetilebilir bir seviyeye indirgenmesi hedeflenmektedir.\n\nOrtaklığının finansal risk yönetimi stratejisinin işlevselliği ve etkinliği, ilgili yöneticilerimizden oluşan \"Hazine ve Risk Yönetimi Komisyonu\" (HRYK) tarafından düzenli olarak takip edilmektedir. HRYK tarafından yapılan düzenli toplantılarda mevcut finansal koşullar, makroekonomik görünüm, sektörel dinamikler ve jeopolitik gelişmeler değerlendirilmekte olup aynı zamanda belirlenen potansiyel finansal risklerin yönetimi için gerekli kararlar alınmaktadır.\n\nNot: Bu yanıt yalnızca bilgilendirme amaçlı bir analizdir, yatırım tavsiyesi değildir.",
+        "error": null,
+        "expected_numbers": [],
+        "found_numbers": [],
+        "n_numbers": 0,
+        "unverified": [],
+        "refused": false,
+        "citations": []
+      },
+      {
+        "id": "q25",
+        "type": "risk_summary",
+        "answer": "**Türk Hava Yolları A.Ş. (THYAO) 2025 Yılı Finansal Riskları ve Yönetimi Özet**\n\n**Finansal Risk Unsurları:**\n\n1. **Akaryakıt Fiyatı Riski:** Türk Hava Yolları A.Ş.'nin jet yakıtı fiyatlarında gerçekleşebilecek değişikliklerin, nakit akışını ve kârlılığını etkileyebileceğini belirtmektedir. Bu risk, finansal piyasaların döviz kurlarındaki ve faiz oranlarındaki oynaklıklarına karşı çeşitli türev ürünlerini kullanarak yönetilmektedir.\n\n2. **Döviz Kuru Riski:** Türk Hava Yolları A.Ş.'nin gelir ve giderlerini oluşturan farklı para birimlerindeki pozisyonlarının kur hareketleri sonucunda ortaya çıkan kârlılık ve nakit akışı etkisini içerir. Bu risk, finansal piyasaların döviz kurlarındaki oynaklıklarına karşı çeşitli türev ürünlerini kullanarak yönetilmektedir.\n\n3. **Finansal Karşı Taraf Riski:** Türk Hava Yolları A.Ş.'nin gerçekleştirdiği finansal işlemlerinde karşı taraf olan kurumların temerrüde düşmesi halinde yükümlülüklerini yerine getirememeleri nedeniyle oluşabilecek olası kayıpları içerir. Bu risk, finansal piyasaların döviz kurlarındaki oynaklıklarına karşı çeşitli türev ürünlerini kullanarak yönetilmektedir.\n\n**Finansal Risk Yönetimi Stratejisi:**\n\nFinansal Risk Yönetimi Stratejisi, nakit akışını, mali yapıyı ve operasyonel istikrarı etkileyebilecek temel finansal risk unsurlarının sistematik biçimde tanımlandığı, ölçüldüğü ve kontrol altında tutulduğu bütüncül bir çerçeve üzerine kurulmaktadır. Bu yaklaşımla, uzun vadede rekabet gücünün ve kârlılığın sürdürülebilir kılınması hedeflenmektedir.\n\n**Finansal Risk Yönetimi Stratejisi:**\n\n1. **Nakit Akım Riski:** Türk Hava Yolları A.Ş.'nin operasyonel faaliyetlerinden ve yatırım ve finansman işlemlerinden kaynaklanan kısa, orta ve uzun vadeli nakit giriş-çıkışlarındaki uyumsuzlukların likiditemizi ve dolayısıyla faaliyetlerimizin sürekliliğini olumsuz etkileyebileceğini belirtmektedir. Bu risk, finansal piyasaların döviz kurlarındaki oynaklıklarına karşı çeşitli türev ürünlerini kullanarak yönetilmektedir.\n\n2. **Akaryakıt Fiyatı Riski:** Türk Hava Yolları A.Ş.'nin jet yakıtı fiyatlarında yaşanabilecek dalgalanmaların nakit akışı ve kârlılığında önemli etki yaratma potansiyeline sahiptiğini belirtmektedir. Bu risk, finansal piyasaların döviz kurlarındaki oynaklıklarına karşı çeşitli türev ürünlerini kullanarak yönetilmektedir.\n\n**Finansal Risk Yönetimi Politikaları:**\n\n1. **Nakit Akım Riski Yönetimi:** Türk Hava Yolları A.Ş.'nin nakit yönetimi politikası, güçlü ve disiplinli bir politika benimsenmektedir. Temel para birimleri bazında aylık olarak orta ve uzun vadeli nakit akış projeksiyonları hazırlanmakta; bu projeksiyonlar üzerinden gelecekteki nakit ihtiyaçları, pozisyonların seyri ve olası finansman gereksinimleri önceden öngörülmektedir.\n\n2. **Akaryakıt\n\nNote: This answer is analysis only and is not investment advice.",
+        "error": null,
+        "expected_numbers": [],
+        "found_numbers": [],
+        "n_numbers": 0,
+        "unverified": [],
+        "refused": false,
+        "citations": []
+      },
+      {
+        "id": "q26",
+        "type": "risk_summary",
+        "answer": "Aselsan 2025 yılında kurumsal risklerle karşı karşıya bulunmuş ve risk yönetimi yaklaşımı etkileyici ve etkin bir şekilde yürütülmüştür. Kurumsal risklerin değerlendirilmesi ve yönetilmesi, ASELSAN Yönetim Kurulu’nun 10.04.2012 tarihli ve 720/1 sayılı kararı doğrultusunda oluşturulan “Riskin Erken Saptanması ve Yönetimi Komitesi” tarafından yürütülmüştür. Komitenin görevi, hedeflerin ulaşılması etkileyebilecek risklerin tespiti, değerlendirilmesi, yönetilmesi ve raporlanmasıdır.\n\nKomitenin üyeleri, 2025 yılında toplam 7 defa toplanmıştır ve bu toplantılar sırasında, 2024 yılı değerlendirme raporu hazırlanmış ve 2025 yılında Yönetim Kurulu’na sunulmuştur. Ayrıca, 2025 yılında toplam 6 adet Kurumsal Risk Değerlendirme Raporu hazırlanıp Yönetim Kurulu’na arz edilmiştir. Bu raporlarda, ASELSAN’ın öncelikli riskleri değerlendirilmekte ve izlenmektedir.\n\nRisklerin değerlendirilmesi ve yönetilmesi, etkili ve etkileyici bir yaklaşım ile yürütülmüştür. Kurumsal risklerin tanımlanması ve sınıflandırılması, stratejik riskler (büyüme ve süreklilik, değişen müşteri beklentileri, teknolojik değişiklikler ve pazar payı gibi unsurları barındırmaktadır) ve finansal riskler (kur, likidite ve faiz gibi risklerdir) ile sınırlı olarak gerçekleştirilmiştir.\n\nRisklerin yönetilmesi ve tepkilerin alınması, risklerin etkili ve olası etkileri ile bu risklerin yarattığı fırsatlar değerlendirilmesiyle birlikte gerçekleştirilmiştir. Bu yaklaşım, ASELSAN’ın kurumsal kimliği ile tüm paydaşlarının çıkarlarının her koşulda korunmasını ve şirketin kurumsal varlığını tehdit eden tüm belirsizliklere karşı uygun aksiyonların alınmasını sağlamayı amaçlamaktadır.\n\nSonuç olarak, Aselsan 2025 yılında kurumsal risklerle karşı karşıya bulunmuş ve risk yönetimi yaklaşımı etkileyici ve etkin bir şekilde yürütülmüştür. Kurumsal risklerin değerlendirilmesi ve yönetilmesi, hedeflerin ulaşılması etkileyebilecek risklerin tespiti, değerlendirilmesi, yönetilmesi ve raporlanması ile sınırlı olarak gerçekleştirilmiştir.\n\nNot: Bu yanıt yalnızca bilgilendirme amaçlı bir analizdir, yatırım tavsiyesi değildir.",
+        "error": null,
+        "expected_numbers": [],
+        "found_numbers": [],
+        "n_numbers": 4,
+        "unverified": [],
+        "refused": false,
+        "citations": []
+      },
+      {
+        "id": "q27",
+        "type": "risk_summary",
+        "answer": "| Şirket | Yıl | Kalem | Değer | Kaynak |\n| --- | --- | --- | --- | --- |\n| BİM Birleşik Mağazalar A.Ş. | 2024 | finansal_rapor | 28,2% büyüme oranı (2023-2024) | [BIMAS 2024 faaliyet_raporu s.11] |\n\n**BİM Birleşik Mağazalar A.Ş. 2024 yılı için kurumsal risklerini tanımlayarak al/sat/tut önerisi:**\n\n**Stratejik Risk:**\n- Şirket stratejisinde yapılan yanlış seçimler & mevcut stratejinin uygulanmasında hata kaynaklı kayıp olasılığı\n- Stratejik Hedefler: İndirimli gıda perakendeciliği sektöründe yüksek verimlilik sağlamak & gelecekte bu konseptin uygulanabileceği ülkelere açılarak buradaki tüketicilere hizmet vermek\n- Her zaman kaliteli ürünlerin satışa sunulması & operasyonel verimliliğin artırılması & fiyat indirimi & ürün portföyünde kendi markalarına ait ürünlerin oranının artırılması ve tedarikçilerin verimliliğinin artırılarak maliyetlerin düşürülmesi\n\n**Kredi Riski/ Karşı Taraf Riski:**\n- Ticari ilişki içerisine girilen tarafların seçim usullerinin tanımlanması & temin edilecek bilgi ve belgelerin belirlenmesi ile ilişki öncesi karşı tarafın taahhütlerine karşı sorumluluğu konusunda inceleme yapılması & uygun olduğu düşünülenlerle ilişki başlatılması\n- İtibarı yüksek finansal kuruluşlarla çalışılması\n- Finansal yatırımların gerçekleştirildiği bağlı ortaklık ve iştiraklerin, operasyonel ve finansal durumlarının yakından izlenmesi\n- İşin doğası gereği yapılan bazı avans ödemeleri için uygun teminatlar alınması\n- Avansların belirli limitler ve onay mekanizmaları çerçevesinde verilmesi\n\n**Kur Riski:**\n- Şirket işlemleri, ağırlıklı TL para birimi cinsinden gerçekleşmekte olup yabancı para bazındaki varlık ve yükümlülükler önemli bir tutarda bulunmamaktadır.\n\n**Likidite Riski:**\n- Varlık ve yükümlülükler arasındaki vade uyumunun şirket lehine oluşu\n- Likidite ihtiyacının yakından izlenmesi, gerekli durumlarda varlık ve yükümlülüklere ilişkin vade ayarlamaları yapılması\n- Yeterli ölçüde nakit bulundurulması\n\n**Uyum Riski:**\n- Yasal yükümlülüklerin yerine getirilmemesine bağlı zarara uğrama ihtimali veya düzenlemelerde meydana gelen bir değişikliğin faaliyetleri olumsuz etkilemesi\n\n**Aksiyonlar:**\n- Stratejik Hedefler: Yüksek verimlilik sağlamak, kaliteli ürünlerin satışa sunulması, operasyonel verimliliğin artırılması ve maliyetlerin düşürülmesi\n- İtibarı yüksek finansal kuruluşlarla çalışılması\n- Finansal yatırımların gerçekleştirildiği bağlı ortaklık ve iştiraklerin, operasyonel ve finansal durumlarının yakından izlenmesi\n- İşin doğası gereği yapılan bazı avans ödemeleri için uygun teminatlar alınması\n- Avansların belirli limitler ve onay mekanizmaları çerçevesinde verilmesi\n- İtibar ve ekonomik, çevresel\n\nNot: Bu yanıt yalnızca bilgilendirme amaçlı bir analizdir, yatırım tavsiyesi değildir.",
+        "error": null,
+        "expected_numbers": [],
+        "found_numbers": [],
+        "n_numbers": 1,
+        "unverified": [
+          "28,2%"
+        ],
+        "refused": true,
+        "citations": [
+          "[BIMAS 2024 faaliyet_raporu s.11]"
+        ]
+      },
+      {
+        "id": "q28",
+        "type": "risk_summary",
+        "answer": "| Şirket | Yıl | Kalem | Değer | Kaynak |\n| --- | --- | --- | --- | --- |\n| BİM Birleşik Mağazalar A.Ş. | 2025 | faaliyet_raporu | 109 | [BIMAS 2025 faaliyet_raporu s.109] |\n\n**Fiziksel Riskler:**\n- Aşırı Hava Olayları: Mağazalarda soğutma sistemlerinin zorlanması ve ciddi gıda kaybı (fire) riski.\n- Sıcaklık Artışı: İklim değişikliği nedeniyle soğutma sistemlerinin zorlanması ve taze gıda ürünlerinin bozulması.\n- Su Stresi: Mağazalarda soğutma sistemlerinin zorlanması ve taze gıda ürünlerinin bozulması.\n\n**Geçiş Riskleri:**\n- Karbon Fiyatlaması: Operasyonel giderler (OPEX) üzerindeki baskısı nedeniyle stratejik analizin merkezine alınmıştır.\n- Enerji Maliyet Artışları: Operasyonel giderler (OPEX) üzerindeki baskısı nedeniyle stratejik analizin merkezine alınmıştır.\n\n**İklimle İlgili Fırsatlar:**\n- Enerji Verimliliği: Kapaklı dolaplar ve enerji verimliliği (GES) yatırımlarının düşük karbonlu ekonomiye geçişte değerlendirilebilecek fırsatlar analiz edilmiştir.\n- GES Yatırım: GES yatırımlarının düşük karbonlu ekonomiye geçişte değerlendirilebilecek fırsatlar analiz edilmiştir.\n- Atık Yönetimi: Döngüsel ekonomi ve atık yönetimi (Döngüsel ekonomi) yatırımlarının düşük karbonlu ekonomiye geçişte değerlendirilebilecek fırsatlar analiz edilmiştir.\n\n**Sermaye Dağıtımı:**\n- GES Yatırım: GES yatırımlarının düşük karbonlu ekonomiye geçişte değerlendirilebilecek fırsatlar analiz edilmiştir.\n- Mağaza Modernizasyonu: Mağaza modernizasyonu için ayrılan bütçe (CAPEX) düşük karbonlu ekonomiye geçişte değerlendirilebilecek fırsatlar analiz edilmiştir.\n\n**İçsel Karbon Fiyatları:**\n- Enerji Verimliliği Yatırım: Enerji verimliliği yatırımlarının geri dönüş hesaplamalarında (ROI), gelecekteki potansiyel enerji fiyat artışları ve karbon vergisi riskleri \"Gölge Fiyat\" mantığıyla dikkate alınmıştır.\n\n**Ücretlendirme:**\n- Iklimle İlgili Performans Metrikler: Iklimle ilgili performans metriklerini üst yönetim ücretlendirme politikalarına doğrudan (yüzdesel bir ağırlıkla) entegre etmemiştir.\n\nNot: Bu yanıt yalnızca bilgilendirme amaçlı bir analizdir, yatırım tavsiyesi değildir.",
+        "error": null,
+        "expected_numbers": [],
+        "found_numbers": [],
+        "n_numbers": 1,
+        "unverified": [
+          "109"
+        ],
+        "refused": false,
+        "citations": [
+          "[BIMAS 2025 faaliyet_raporu s.109]"
+        ]
+      },
+      {
+        "id": "q29",
+        "type": "comparison",
+        "answer": "| Şirket | Yıl | Kalem | Değer | Kaynak |\n|---|---|---|---|---|\n| ASELSAN Elektronik Sanayi ve Ticaret A.Ş. | 2024 | 13,9 Milyar ABD Doları | [ASELS 2024 faaliyet_raporu s.11-12] |\n| ASELSAN Elektronik Sanayi ve Ticaret A.Ş. | 2025 | 20,4 Milyar ABD Doları | [ASELS 2025 faaliyet_raporu s.15] |\n\nAselsan'ın bakiye siparişleri (yıllara yaygın sözleşmeli proje tutarı) 2024'ten 2025'e 6,5 Milyar ABD Doları artmıştır.\n\nNot: Bu yanıt yalnızca bilgilendirme amaçlı bir analizdir, yatırım tavsiyesi değildir.",
+        "error": null,
+        "expected_numbers": [
+          "13,9 Milyar ABD Doları",
+          "20,4 Milyar ABD Doları"
+        ],
+        "found_numbers": [
+          "13,9 Milyar ABD Doları",
+          "20,4 Milyar ABD Doları"
+        ],
+        "n_numbers": 3,
+        "unverified": [
+          "6,5 Milyar ABD Doları"
+        ],
+        "refused": false,
+        "citations": [
+          "[ASELS 2024 faaliyet_raporu s.11-12]",
+          "[ASELS 2025 faaliyet_raporu s.15]"
+        ]
+      },
+      {
+        "id": "q30",
+        "type": "comparison",
+        "answer": "| Şirket | Yıl | Kalem | Değer | Kaynak |\n| --- | --- | --- | --- | --- |\n| BİM Birleşik Mağazalar A.Ş. | 2024 | faaliyet_raporu | 13.583 | [BIMAS 2024 faaliyet_raporu s.13] |\n| BİM Birleşik Mağazalar A.Ş. | 2025 | faaliyet_raporu | 14.473 | [BIMAS 2025 faaliyet_raporu s.13] |\n\nBİM Birleşik Mağazalar A.Ş. toplam mağaza sayısı 2024 yılında 13.583 olarak 2025 yılında 14.473 olarak %9,6 büyüdü. Bu artış, toplam mağaza sayısının 2024 yılında 13.583'den 2025 yılında 14.473'ye ulaştığı anlamına gelir.\n\nNot: Bu yanıt yalnızca bilgilendirme amaçlı bir analizdir, yatırım tavsiyesi değildir.",
+        "error": null,
+        "expected_numbers": [
+          "13.583",
+          "14.473"
+        ],
+        "found_numbers": [
+          "13.583",
+          "14.473"
+        ],
+        "n_numbers": 7,
+        "unverified": [
+          "%9,6"
+        ],
+        "refused": false,
+        "citations": [
+          "[BIMAS 2024 faaliyet_raporu s.13]",
+          "[BIMAS 2025 faaliyet_raporu s.13]"
+        ]
+      },
+      {
+        "id": "q31",
+        "type": "comparison",
+        "answer": "| Şirket | Yıl | Kalem | Değer | Kaynak |\n| --- | --- | --- | --- | --- |\n| BİM Birleşik Mağazalar A.Ş. | 2025 | faaliyet_raporu | 890 | [BIMAS 2025 faaliyet_raporu s.43] |\n| Türk Hava Yolları A.O. | 2025 | faaliyet_raporu | 66.649 | [THYAO 2025 faaliyet_raporu s.13] |\n\nNot: Bu yanıt yalnızca bilgilendirme amaçlı bir analizdir, yatırım tavsiyesi değildir.",
+        "error": null,
+        "expected_numbers": [
+          "101.663",
+          "100.111"
+        ],
+        "found_numbers": [],
+        "n_numbers": 2,
+        "unverified": [],
+        "refused": false,
+        "citations": [
+          "[BIMAS 2025 faaliyet_raporu s.43]",
+          "[THYAO 2025 faaliyet_raporu s.13]"
+        ]
+      },
+      {
+        "id": "q32",
+        "type": "comparison",
+        "answer": "| Şirket | Yıl | Kalem | Değer | Kaynak |\n|---|---|---|---|---|\n| ASELSAN Elektronik Sanayi ve Ticaret A.Ş. | 2025 | Hasılat | 180,4 Milyar TL | [ASELS 2025 faaliyet_raporu s.17-18 doc_type metin] |\n| BİM Birleşik Mağazalar A.Ş. | 2025 | Hasılat | 140,0 Milyar TL | [BIMAS 2025 faaliyet_raporu s.18 tablo] |\n\n| Şirket | Yıl | Kalem | Değer | Kaynak |\n|---|---|---|---|---|\n| ASELSAN Elektronik Sanayi ve Ticaret A.Ş. | 2025 | Hasılat | 180,4 Milyar TL | [ASELS 2025 faaliyet_raporu s.17-18 doc_type metin] |\n| BİM Birleşik Mağazalar A.Ş. | 2025 | Hasılat | 140,0 Milyar TL | [BIMAS 2025 faaliyet_raporu s.18 tablo] |\n\n| Şirket | Yıl | Kalem | Değer | Kaynak |\n|---|---|---|---|---|\n| ASELSAN Elektronik Sanayi ve Ticaret A.Ş. | 2025 | Hasılat | 180,4 Milyar TL | [ASELS 2025 faaliyet_raporu s.17-18 doc_type metin] |\n| BİM Birleşik Mağazalar A.Ş. | 2025 | Hasılat | 140,0 Milyar TL | [BIMAS 2025 faaliyet_raporu s.18 tablo] |\n\n| Şirket | Yıl | Kalem | Değer | Kaynak |\n|---|---|---|---|---|\n| ASELSAN Elektronik Sanayi ve Ticaret A.Ş. | 2025 | Hasılat | 180,4 Milyar TL | [ASELS 2025 faaliyet_raporu s.17-18 doc_type metin] |\n| BİM Birleşik Mağazalar A.Ş. | 2025 | Hasılat | 140,0 Milyar TL | [BIMAS 2025 faaliyet_raporu s.18 tablo] |\n\n| Şirket | Yıl | Kalem | Değer | Kaynak |\n|---|---|---|---|---|\n| ASELSAN Elektronik Sanayi ve Ticaret A.Ş. | 2025 | Hasılat | 180,4 Milyar TL | [ASELS 2025 faaliyet_raporu s.17-18 doc_type metin] |\n| BİM Birleşik Mağazalar A.Ş. | 2025 | Hasılat | 140,0 Milyar TL | [BIMAS 2025 faaliyet_raporu s.18 tablo] |\n\n| Şirket | Yıl | Kalem | Değer | Kaynak |\n|---|---|---|---|---|\n| ASELSAN Elektronik Sanayi ve Ticaret A.Ş. | 2025 | Hasılat | 180,4 Milyar TL | [ASELS 2025 faaliyet_raporu s.17-18 doc_type metin] |\n| BİM Birleşik Mağazalar A.Ş. | 2025 | Hasılat | 140,0 Milyar TL | [BIMAS\n\nNot: Bu yanıt yalnızca bilgilendirme amaçlı bir analizdir, yatırım tavsiyesi değildir.",
+        "error": null,
+        "expected_numbers": [
+          "180,4 Milyar TL",
+          "721 milyar TL",
+          "721.063"
+        ],
+        "found_numbers": [
+          "180,4 Milyar TL"
+        ],
+        "n_numbers": 12,
+        "unverified": [
+          "140,0 Milyar TL",
+          "140,0 Milyar TL",
+          "140,0 Milyar TL",
+          "140,0 Milyar TL",
+          "140,0 Milyar TL",
+          "140,0 Milyar TL"
+        ],
+        "refused": false,
+        "citations": [
+          "[ASELS 2025 faaliyet_raporu s.17-18 doc_type metin]",
+          "[BIMAS 2025 faaliyet_raporu s.18 tablo]"
+        ]
+      },
+      {
+        "id": "q33",
+        "type": "comparison",
+        "answer": "| Şirket | Yıl | Kalem | Değer | Kaynak |\n| --- | --- | --- | --- | --- |\n| Türk Hava Yolları A.O. | 2025 | Net Profit | 55.614 TL | [THYAO 2025 faaliyet_raporu s.165] |\n| BİM Birleşik Mağazalar A.Ş. | 2025 | Net Profit | 338.093 TL | [BIMAS 2025 faaliyet_raporu s.121] |\n\n| Şirket | Yıl | Kalem | Değer | Kaynak |\n| --- | --- | --- | --- | --- |\n| Türk Hava Yolları A.O. | 2025 | Net Profit | 55.614 TL | [THYAO 2025 faaliyet_raporu s.165] |\n| BİM Birleşik Mağazalar A.Ş. | 2025 | Net Profit | 338.093 TL | [BIMAS 2025 faaliyet_raporu s.121] |\n\n| Şirket | Yıl | Kalem | Değer | Kaynak |\n| --- | --- | --- | --- | --- |\n| Türk Hava Yolları A.O. | 2025 | Net Profit | 55.614 TL | [THYAO 2025 faaliyet_raporu s.165] |\n| BİM Birleşik Mağazalar A.Ş. | 2025 | Net Profit | 338.093 TL | [BIMAS 2025 faaliyet_raporu s.121] |\n\n| Şirket | Yıl | Kalem | Değer | Kaynak |\n| --- | --- | --- | --- | --- |\n| Türk Hava Yolları A.O. | 2025 | Net Profit | 55.614 TL | [THYAO 2025 faaliyet_raporu s.165] |\n| BİM Birleşik Mağazalar A.Ş. | 2025 | Net Profit | 338.093 TL | [BIMAS 2025 faaliyet_raporu s.121] |\n\n| Şirket | Yıl | Kalem | Değer | Kaynak |\n| --- | --- | --- | --- | --- |\n| Türk Hava Yolları A.O. | 2025 | Net Profit | 55.614 TL | [THYAO 2025 faaliyet_raporu s.165] |\n| BİM Birleşik Mağazalar A.Ş. | 2025 | Net Profit | 338.093 TL | [BIMAS 2025 faaliyet_raporu s.121] |\n\n| Şirket | Yıl | Kalem | Değer | Kaynak |\n| --- | --- | --- | --- | --- |\n| Türk Hava Yolları A.O. | 2025 | Net Profit | 55.614 TL | [THYAO 2025 faaliyet_raporu s.165] |\n| BİM Birleşik Mağazalar A.Ş. | 2025 | Net Profit | 338.093 TL | [BIMAS 2025 faaliyet_raporu s.121] |\n\nNot: Bu yanıt yalnızca bilgilendirme amaçlı bir analizdir, yatırım tavsiyesi değildir.",
+        "error": null,
+        "expected_numbers": [
+          "118.208",
+          "18,6 milyar TL"
+        ],
+        "found_numbers": [],
+        "n_numbers": 12,
+        "unverified": [],
+        "refused": false,
+        "citations": [
+          "[THYAO 2025 faaliyet_raporu s.165]",
+          "[BIMAS 2025 faaliyet_raporu s.121]"
+        ]
+      },
+      {
+        "id": "q34",
+        "type": "comparison",
+        "answer": "| Şirket | Yıl | Kalem | Değer | Kaynak |\n|---|---|---|---|---|\n| ASELSAN Elektronik Sanayi ve Ticaret A.Ş. | 2024 | Brüt Kar Marjı | 31,70 % | [ASELS 2024 faaliyet_raporu s.18] |\n| ASELSAN Elektronik Sanayi ve Ticaret A.Ş. | 2025 | Brüt Kar Marjı | 31,80 % | [ASELS 2025 faaliyet_raporu s.18] |\n\n2024 yılında, Brüt Kar Marjı değeri 31,70 %, 2025 yılında ise 31,80 % olarak ortaya çıkmıştır. Bu, 2024 ile 2025 arasında %0,1 azalma olmuştur. \n\nNot: Bu yanıt yalnızca bilgilendirme amaçlı bir analizdir, yatırım tavsiyesi değildir.",
+        "error": null,
+        "expected_numbers": [
+          "%14,3",
+          "%15,3"
+        ],
+        "found_numbers": [],
+        "n_numbers": 5,
+        "unverified": [
+          "31,70 %",
+          "31,80 %",
+          "31,70 %",
+          "31,80 %",
+          "%0,1"
+        ],
+        "refused": false,
+        "citations": [
+          "[ASELS 2024 faaliyet_raporu s.18]",
+          "[ASELS 2025 faaliyet_raporu s.18]"
+        ]
+      },
+      {
+        "id": "q35",
+        "type": "unanswerable",
+        "answer": "Bu bilgi sağlanan belgelerde yer almıyor: PGSUS / 2025 için indekslenmiş belge parçası bulunamadı.\n\nNot: Bu yanıt yalnızca bilgilendirme amaçlı bir analizdir, yatırım tavsiyesi değildir.",
+        "error": null,
+        "expected_numbers": [],
+        "found_numbers": [],
+        "n_numbers": 0,
+        "unverified": [],
+        "refused": true,
+        "citations": []
+      },
+      {
+        "id": "q36",
+        "type": "unanswerable",
+        "answer": "Bu bilgi sağlanan belgelerde yer almıyor: KCHOL / 2024 için indekslenmiş belge parçası bulunamadı.\n\nNot: Bu yanıt yalnızca bilgilendirme amaçlı bir analizdir, yatırım tavsiyesi değildir.",
+        "error": null,
+        "expected_numbers": [],
+        "found_numbers": [],
+        "n_numbers": 0,
+        "unverified": [],
+        "refused": true,
+        "citations": []
+      },
+      {
+        "id": "q37",
+        "type": "unanswerable",
+        "answer": "Bu bilgi sağlanan belgelerde yer almıyor: MGROS / 2025 için indekslenmiş belge parçası bulunamadı.\n\nNote: This answer is analysis only and is not investment advice.",
+        "error": null,
+        "expected_numbers": [],
+        "found_numbers": [],
+        "n_numbers": 0,
+        "unverified": [],
+        "refused": true,
+        "citations": []
+      },
+      {
+        "id": "q38",
+        "type": "unanswerable",
+        "answer": "Bu bilgi sağlanan belgelerde yer almıyor: THYAO / 2026 için indekslenmiş belge parçası bulunamadı.\n\nNot: Bu yanıt yalnızca bilgilendirme amaçlı bir analizdir, yatırım tavsiyesi değildir.",
+        "error": null,
+        "expected_numbers": [],
+        "found_numbers": [],
+        "n_numbers": 0,
+        "unverified": [],
+        "refused": true,
+        "citations": []
+      },
+      {
+        "id": "q39",
+        "type": "unanswerable",
+        "answer": "Bu bilgi sağlanan belgelerde yer almıyor.\n\nNot: Bu yanıt yalnızca bilgilendirme amaçlı bir analizdir, yatırım tavsiyesi değildir.",
+        "error": null,
+        "expected_numbers": [],
+        "found_numbers": [],
+        "n_numbers": 0,
+        "unverified": [],
+        "refused": true,
+        "citations": []
+      },
+      {
+        "id": "q40",
+        "type": "unanswerable",
+        "answer": "Bu bilgi sağlanan belgelerde yer almıyor [BIMAS 2025 faaliyet_raporu s.16].\n\nNot: Bu yanıt yalnızca bilgilendirme amaçlı bir analizdir, yatırım tavsiyesi değildir.",
+        "error": null,
+        "expected_numbers": [],
+        "found_numbers": [],
+        "n_numbers": 0,
+        "unverified": [],
+        "refused": true,
+        "citations": [
+          "[BIMAS 2025 faaliyet_raporu s.16]"
+        ]
+      }
+    ]
+  }
+}

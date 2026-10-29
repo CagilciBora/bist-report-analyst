@@ -82,7 +82,7 @@ class RetrievalConfig(BaseModel):
     rerank_top_n: int = 20
     final_top_k: int = 6
     reranker_model: str = "BAAI/bge-reranker-v2-m3"
-    table_boost_enabled: bool = True
+    table_boost_enabled: bool = False
     table_boost: float = Field(1.15, ge=1.0)
 
 

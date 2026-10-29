@@ -51,7 +51,7 @@ retrieval:
   rerank_top_n: 20               # how many fused candidates the cross-encoder sees
   final_top_k: 6
   reranker_model: BAAI/bge-reranker-v2-m3
-  table_boost_enabled: true
+  table_boost_enabled: false     # off by default: the eval showed it lowers Hit@1 in every mode
   table_boost: 1.15              # multiply score of table chunks for financial questions
 
 llm:
