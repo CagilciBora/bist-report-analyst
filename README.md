@@ -54,7 +54,7 @@ flowchart LR
     B --> HR
     HR -->|RRF| RR[Reranker<br/>bge-reranker-v2-m3]
     RR --> PB[PromptBuilder<br/>answer_tr.md]
-    PB --> L[LLMClient<br/>Ollama / Anthropic / OpenAI]
+    PB --> L[LLMClient<br/>Ollama / Claude Code /<br/>Anthropic / OpenAI]
     L --> NV[NumberVerifier]
     NV --> R[AskResponse<br/>answer, citations, scores,<br/>unverified numbers, timings]
     R --> API[FastAPI] --> UI[Streamlit]
@@ -67,13 +67,9 @@ flowchart LR
 | Chunking | `Chunker`, `TokenCounter` | `src/kaprag/chunking/` |
 | Indexing | `Embedder`, `DenseIndex`, `BM25Index`, `TurkishTokenizer`, `ChunkStore`, `Indexer` | `src/kaprag/indexing/` |
 | Retrieval | `QueryParser`, `HybridRetriever`, `reciprocal_rank_fusion`, `Reranker` | `src/kaprag/retrieval/` |
-| Generation | `PromptBuilder`, `LLMClient` (+3 backends), `NumberVerifier` | `src/kaprag/generation/` |
+| Generation | `PromptBuilder`, `LLMClient` (+4 backends), `NumberVerifier` | `src/kaprag/generation/` |
 | Orchestration | `RAGPipeline` | `src/kaprag/pipeline.py` |
 | Interfaces | Typer CLI, FastAPI, Streamlit | `src/kaprag/cli.py`, `src/kaprag/api/main.py`, `ui/app.py` |
-
-## Screenshots
-
-_Placeholder — add `docs/img/chat.png` (answer with highlighted numbers) and `docs/img/sources.png` (Kaynaklar panel)._
 
 ## Setup
 
@@ -143,7 +139,7 @@ uv run pytest -q && uv run ruff check src tests eval ui
 ## Evaluation
 
 <!-- EVAL_RESULTS_START -->
-Run: `uv run python eval/run_eval.py` on a laptop CPU (Ryzen 5 5500U, no GPU). 40 questions written from the indexed chunks (34 answerable, 6 unanswerable), all still `reviewed: false`. Full JSON in `eval/results/`.
+Run: `uv run python eval/run_eval.py` on a laptop CPU (Ryzen 5 5500U, no GPU). 40 questions written from the indexed chunks (34 answerable, 6 unanswerable). The questions were reviewed by the LLM judge (see below), not by a human: each item's `reviewed` field, the human-review flag, is still `false`, and the judge's verdict is stored in the item's `llm_review` field. Full JSON in `eval/results/`.
 
 ### Retrieval (34 answerable questions)
 
@@ -188,7 +184,7 @@ Reading the table:
 
 `eval/judge.py` adds a judge on top of the deterministic metrics. It runs through the logged-in **Claude Code CLI** (`llm.judge_backend: claude_code`), so a Claude Pro/Max subscription covers it and no API key is needed. Two jobs:
 
-- **Dataset review** (`--review-dataset`): replaced the manual review of the 40 eval items. 39 passed and 1 real error was fixed (q12 listed a 2024 figure for a 2025 question). Two judge flags were **false alarms** (q05, q23): the judge hadn't been shown the right chunk of the page. The evidence picker was fixed and is now covered by `tests/test_judge.py`; the rejected suggestion is recorded in the eval file.
+- **Dataset review** (`--review-dataset`): used instead of a manual review of the 40 eval items. Verdicts are stored per item in `llm_review`; the human-review flag `reviewed` stays `false`. 39 items are marked `ok`, and 1 real error was fixed (q12 listed a 2024 figure for a 2025 question). Two judge flags were **false alarms** (q05, q23): the judge hadn't been shown the right chunk of the page. The evidence picker was fixed and is now covered by `tests/test_judge.py`; the rejected suggestion is recorded in the eval file.
 - **Answer grading** (default): judges correctness against the gold evidence pages, plus faithfulness, citation support and refusals, against what the system actually retrieved.
 
 Judge: claude_code/opus · graded answers of ollama/qwen2.5:3b-instruct · 40 questions (0 judge errors)
@@ -240,7 +236,7 @@ Judge vs deterministic metrics: numbers agreement 0.80 (5 disagreements), refusa
 
 ## Future work
 
-Column-aware table QA (row/column lookups instead of free text), OCR by default with layout models, period-aware metadata (Q1–Q4 from KAP filings), scheduled ingestion of new KAP disclosures (respecting the site's terms), Qdrant server + async workers, LLM-as-judge for answer correctness.
+Column-aware table QA (row/column lookups instead of free text), OCR by default with layout models, period-aware metadata (Q1–Q4 from KAP filings), scheduled ingestion of new KAP disclosures (respecting the site's terms), Qdrant server + async workers, spot-checking LLM-judge verdicts across runs (they vary from run to run).
 
 ## Disclaimer
 
