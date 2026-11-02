@@ -1,0 +1,624 @@
+{
+  "source_results": "eval/results/results_20261029_214809.json",
+  "judge": "claude_code/opus",
+  "generator": "ollama/qwen2.5:3b-instruct",
+  "metrics": {
+    "n": 40,
+    "errors": 0,
+    "accuracy": 0.7,
+    "faithfulness": 0.74475,
+    "citations_all_supported": 0.4,
+    "refusal_appropriate": 0.9,
+    "mean_score": 3.475,
+    "by_type": {
+      "comparison": {
+        "n": 6,
+        "accuracy": 0.3333333333333333,
+        "faithfulness": 0.515
+      },
+      "factual_number": {
+        "n": 9,
+        "accuracy": 0.7777777777777778,
+        "faithfulness": 0.7333333333333333
+      },
+      "factual_text": {
+        "n": 6,
+        "accuracy": 1.0,
+        "faithfulness": 0.9583333333333334
+      },
+      "risk_summary": {
+        "n": 5,
+        "accuracy": 0.5,
+        "faithfulness": 0.78
+      },
+      "table_lookup": {
+        "n": 8,
+        "accuracy": 0.5625,
+        "faithfulness": 0.55625
+      },
+      "unanswerable": {
+        "n": 6,
+        "accuracy": 1.0,
+        "faithfulness": 1
+      }
+    },
+    "calibration": {
+      "numbers_agreement": 0.8,
+      "numbers_disagreements": [
+        {
+          "id": "q12",
+          "deterministic_all_found": false,
+          "judge_correct": true
+        },
+        {
+          "id": "q14",
+          "deterministic_all_found": false,
+          "judge_correct": true
+        },
+        {
+          "id": "q15",
+          "deterministic_all_found": true,
+          "judge_correct": false
+        },
+        {
+          "id": "q16",
+          "deterministic_all_found": true,
+          "judge_correct": false
+        },
+        {
+          "id": "q30",
+          "deterministic_all_found": true,
+          "judge_correct": false
+        }
+      ],
+      "refusal_agreement": 0.95,
+      "refusal_disagreements": [
+        {
+          "id": "q01",
+          "keyword_refused": true,
+          "judge_refused": false
+        },
+        {
+          "id": "q27",
+          "keyword_refused": true,
+          "judge_refused": false
+        }
+      ]
+    }
+  },
+  "graded": [
+    {
+      "id": "q01",
+      "type": "factual_number",
+      "answer_correct": "correct",
+      "faithfulness": 0.5,
+      "unsupported_claims": [
+        "Not: Bu bilgi sağlanan belgelerde yer almıyor"
+      ],
+      "citations": "all_supported",
+      "refused": false,
+      "refusal_appropriate": true,
+      "score": 4,
+      "explanation": "The answer gives the correct 180,4 milyar TL figure with a valid citation to s.17. However, it adds a contradictory note saying the information is not in the documents, which the retrieved context disproves."
+    },
+    {
+      "id": "q02",
+      "type": "factual_number",
+      "answer_correct": "correct",
+      "faithfulness": 1,
+      "unsupported_claims": [],
+      "citations": "no_citations",
+      "refused": false,
+      "refusal_appropriate": true,
+      "score": 4,
+      "explanation": "Both figures (2.506 hired, 1.069 departed) match the reference and are supported by the retrieved s.20 context. The answer carries no citation tags, so it falls short of a full score."
+    },
+    {
+      "id": "q03",
+      "type": "factual_number",
+      "answer_correct": "correct",
+      "faithfulness": 1,
+      "unsupported_claims": [],
+      "citations": "all_supported",
+      "refused": false,
+      "refusal_appropriate": true,
+      "score": 5,
+      "explanation": "Cevaptaki 92,6 milyon yolcu rakamı beklenen değerle örtüşüyor ve getirilen bağlamda yer alıyor. Atıf yapılan s.10, \"92,6 milyon yolcuya hizmet sunduk\" ifadesiyle iddiayı destekliyor."
+    },
+    {
+      "id": "q04",
+      "type": "factual_number",
+      "answer_correct": "correct",
+      "faithfulness": 0.6,
+      "unsupported_claims": [
+        "Türkiye konsolide verileri"
+      ],
+      "citations": "all_supported",
+      "refused": false,
+      "refusal_appropriate": true,
+      "score": 4,
+      "explanation": "The figure 101.663 is correct and the cited s.31 supports it. However, the 'Türkiye konsolide verileri' label is wrong: that footnote marks only the asterisked training items, and s.43 shows the total covers Türkiye, Fas and Mısır."
+    },
+    {
+      "id": "q05",
+      "type": "factual_number",
+      "answer_correct": "correct",
+      "faithfulness": 1,
+      "unsupported_claims": [],
+      "citations": "no_citations",
+      "refused": false,
+      "refusal_appropriate": true,
+      "score": 4,
+      "explanation": "The answer gives the expected 18,1 milyar TL, which the retrieved context directly supports (BIMAS 2024 faaliyet raporu s.9 and s.18). It is correct and faithful but carries no citation tags and states no year or context."
+    },
+    {
+      "id": "q06",
+      "type": "factual_number",
+      "answer_correct": "incorrect",
+      "faithfulness": 0,
+      "unsupported_claims": [
+        "AJet markası 2024 yılında yaklaşık 134.954 yolcu taşıdı"
+      ],
+      "citations": "none_supported",
+      "refused": false,
+      "refusal_appropriate": true,
+      "score": 1,
+      "explanation": "The answer gives 134.954, which is AJet's landing count (konma sayısı), instead of the approximately 21,5 million passengers stated in the retrieved context. The cited page s.8 does not support the claim because it attributes 134.954 to landings, not passengers."
+    },
+    {
+      "id": "q07",
+      "type": "factual_number",
+      "answer_correct": "correct",
+      "faithfulness": 1,
+      "unsupported_claims": [],
+      "citations": "all_supported",
+      "refused": false,
+      "refusal_appropriate": true,
+      "score": 5,
+      "explanation": "Yanıt, beklenen 9.985 kişi rakamını doğru veriyor ve bu bilgi getirilen bağlamdaki ASELS 2025 faaliyet raporu s.15-16 bölümünde açıkça yer alıyor. Atıf doğru sayfaya işaret ediyor ve desteklenmeyen bir iddia yok."
+    },
+    {
+      "id": "q08",
+      "type": "factual_number",
+      "answer_correct": "correct",
+      "faithfulness": 1,
+      "unsupported_claims": [],
+      "citations": "all_supported",
+      "refused": false,
+      "refusal_appropriate": true,
+      "score": 5,
+      "explanation": "Cevaptaki 933 mağaza rakamı beklenen değerle örtüşüyor ve alınan bağlamdaki s.12 tarafından doğrudan destekleniyor. Atıf doğru, yanıt eksiksiz; sondaki \"— Türkçe\" ifadesi yalnızca küçük bir biçim kusuru."
+    },
+    {
+      "id": "q09",
+      "type": "factual_number",
+      "answer_correct": "incorrect",
+      "faithfulness": 0.5,
+      "unsupported_claims": [
+        "Turkish Airlines'nin 2025 yılında toplam geliri, 1 trilyon ABD doları ile karşılaştırıldı."
+      ],
+      "citations": "no_citations",
+      "refused": false,
+      "refusal_appropriate": true,
+      "score": 1,
+      "explanation": "The answer never gives the 24,1 milyar USD figure, even though the retrieved table shows 24.096 million USD, and it misapplies the sector-wide 1 trillion USD revenue to Turkish Airlines. Only the generic sector-positioning sentence is supported, and there are no citations."
+    },
+    {
+      "id": "q10",
+      "type": "table_lookup",
+      "answer_correct": "correct",
+      "faithfulness": 1,
+      "unsupported_claims": [],
+      "citations": "all_supported",
+      "refused": false,
+      "refusal_appropriate": true,
+      "score": 5,
+      "explanation": "The answer gives the expected 1.996.745 milyon TL, which matches the TOPLAM VARLIKLAR line for 31 Aralık 2025 in the retrieved balance sheet. The citation points to the supporting page (s.9) despite a slightly malformed tag, and the second sentence merely repeats the figure."
+    },
+    {
+      "id": "q11",
+      "type": "table_lookup",
+      "answer_correct": "correct",
+      "faithfulness": 1,
+      "unsupported_claims": [],
+      "citations": "all_supported",
+      "refused": false,
+      "refusal_appropriate": true,
+      "score": 5,
+      "explanation": "Cevaptaki 85,60 kuruş beklenen değerle ve finansal rapor s.11'deki Pay Başına Kar satırıyla birebir örtüşüyor. Atıf biçimi standart dışı olsa da (doc_type tablo) doğru ve bağlamda bulunan sayfayı gösteriyor."
+    },
+    {
+      "id": "q12",
+      "type": "table_lookup",
+      "answer_correct": "correct",
+      "faithfulness": 1,
+      "unsupported_claims": [],
+      "citations": "all_supported",
+      "refused": false,
+      "refusal_appropriate": true,
+      "score": 5,
+      "explanation": "The answer gives the expected 240.599 milyon TL for 2025 akaryakıt gideri, matching the gold table. The cited finansal_rapor s.68 table was retrieved and directly supports the figure, despite the slightly non-standard citation tag format."
+    },
+    {
+      "id": "q13",
+      "type": "table_lookup",
+      "answer_correct": "incorrect",
+      "faithfulness": 0,
+      "unsupported_claims": [
+        "2024 yılında tüketilen jet yakıtları (ABD Doları) 6.163 bin TL",
+        "birim fiyatı (ABD Doları / Ton) 1.144 ABD Doları/Ton"
+      ],
+      "citations": "no_citations",
+      "refused": false,
+      "refusal_appropriate": true,
+      "score": 1,
+      "explanation": "The answer gives fuel expense (6.163, with garbled units) instead of the 7.000 thousand ton consumption, and the 2022 unit cost (1.144) instead of the 2024 figure of 880 USD/ton. Both claims misread the retrieved table, and no citations are provided."
+    },
+    {
+      "id": "q14",
+      "type": "table_lookup",
+      "answer_correct": "correct",
+      "faithfulness": 0.75,
+      "unsupported_claims": [
+        "Kalem: \"KAP\" (the context labels this figure FVAÖK, not KAP)"
+      ],
+      "citations": "none_supported",
+      "refused": false,
+      "refusal_appropriate": true,
+      "score": 3,
+      "explanation": "The value 43,5 milyar TL matches the expected FVAÖK and is supported by retrieved s.31, but the table mislabels the item as \"KAP\". The cited s.19 gives no FVAÖK amount, only margins, so the citation does not support the figure."
+    },
+    {
+      "id": "q15",
+      "type": "table_lookup",
+      "answer_correct": "partially_correct",
+      "faithfulness": 0.5,
+      "unsupported_claims": [
+        "37.643.417 TL (tablo birimi Bin TL; doğru tutar 37.643.417 bin TL, yani yaklaşık 37,6 milyar TL)"
+      ],
+      "citations": "all_supported",
+      "refused": false,
+      "refusal_appropriate": true,
+      "score": 3,
+      "explanation": "Rakam dizisi ve atıf yapılan satır doğru, ancak tablo Bin TL cinsinden olduğu halde yanıt tutarı TL olarak vererek değeri 1.000 kat küçültmüştür. Bu birim hatası denk bir biçimlendirme sayılmaz; doğru tutar yaklaşık 37,6 milyar TL'dir."
+    },
+    {
+      "id": "q16",
+      "type": "table_lookup",
+      "answer_correct": "incorrect",
+      "faithfulness": 0.2,
+      "unsupported_claims": [
+        "32.216 + 1.018.606 + 97.723 + 28.153 + 7.698 + 34.817 = 1.644.567 Bin TL"
+      ],
+      "citations": "none_supported",
+      "refused": false,
+      "refusal_appropriate": true,
+      "score": 1,
+      "explanation": "The correct figure is 97.723 Bin TL, but the answer wrongly sums all six unrelated table lines and gets 1.644.567 Bin TL, which is also arithmetically wrong (the sum is 1.219.213). The cited page holds the component figures but does not support the stated total, even though the retrieved context contained the right value."
+    },
+    {
+      "id": "q17",
+      "type": "table_lookup",
+      "answer_correct": "incorrect",
+      "faithfulness": 0,
+      "unsupported_claims": [
+        "2024 değeri 161.807 (satış tutarı olarak sunulmuş; bağlamda bu rakam Duran Varlıklar kalemine ait)",
+        "Bu bilgi sağlanan belgelerde yer almıyor."
+      ],
+      "citations": "none_supported",
+      "refused": true,
+      "refusal_appropriate": false,
+      "score": 1,
+      "explanation": "Yanıt, doğru değer olan 519.567 milyon TL yerine aynı tablodaki Duran Varlıklar rakamı 161.807'yi vermiş, ayrıca bilginin belgelerde olmadığını belirterek kendisiyle çelişmiştir. Oysa getirilen bağlamda satışlar hem s.19 tablosunda hem de s.9'da (520 milyar TL) açıkça yer almaktadır ve s.19 atfı verilen iddiayı desteklememektedir."
+    },
+    {
+      "id": "q18",
+      "type": "factual_text",
+      "answer_correct": "correct",
+      "faithfulness": 1,
+      "unsupported_claims": [],
+      "citations": "all_supported",
+      "refused": false,
+      "refusal_appropriate": true,
+      "score": 5,
+      "explanation": "Cevap denetçiyi PwC Bağımsız Denetim ve SMMM A.Ş. olarak doğru belirtiyor ve bu bilgi alınan bağlamda yer alıyor. Atıf yapılan s.7 parçası denetçi raporunun PwC imzasını içerdiğinden iddiayı destekliyor; yalnızca cümlede küçük bir dil bozukluğu ve atıf biçiminde farklılık var."
+    },
+    {
+      "id": "q19",
+      "type": "factual_text",
+      "answer_correct": "correct",
+      "faithfulness": 0.95,
+      "unsupported_claims": [
+        "Tablodaki 'Kalem: KAP duyurusu' etiketi: bağlamda bilgi KAP duyurusu olarak değil, Kurumsal Yönetim Bilgi Formu'ndaki 'Yönetim kurulu başkanının adı' alanında geçiyor"
+      ],
+      "citations": "all_supported",
+      "refused": false,
+      "refusal_appropriate": true,
+      "score": 4,
+      "explanation": "Prof. Dr. Ercümend ARVAS doğru yanıttır ve s.65 bağlamı bunu destekler. Tablodaki 'KAP duyurusu' kalem etiketi yanlış, atıf etiketi de biçimsel olarak bozuktur ('doc_type s.65')."
+    },
+    {
+      "id": "q20",
+      "type": "factual_text",
+      "answer_correct": "correct",
+      "faithfulness": 1,
+      "unsupported_claims": [],
+      "citations": "all_supported",
+      "refused": false,
+      "refusal_appropriate": true,
+      "score": 5,
+      "explanation": "Yanıt, referans kanıttaki adresle uyumlu olarak Sancaktepe/İstanbul ilçesini doğru veriyor ve atıf yapılan BIMAS 2024 s.66 bağlamı bunu destekliyor. Bağlamdaki adres yatırımcı ilişkileri iletişim bilgisi olarak geçse de beklenen kanıtla örtüşüyor."
+    },
+    {
+      "id": "q21",
+      "type": "factual_text",
+      "answer_correct": "correct",
+      "faithfulness": 0.8,
+      "unsupported_claims": [
+        "Kâr dağıtım politikası, 2016 yılından itibaren takip edilen olağan genel kurul toplantısında pay sahiplerine sunulmuştur.",
+        "Hesaplanan dağıtılabilir kâr tutarı, mevzuat ve esas sözleşme hükümleri ile şirketin özsermaye oranı, sürdürülebilir büyüme hızı... dikkate alınarak hesaplanır."
+      ],
+      "citations": "no_citations",
+      "refused": false,
+      "refusal_appropriate": true,
+      "score": 4,
+      "explanation": "The answer gives the key fact (a target of at least %10 of net profit) and the policy's calculation basis, but it garbles the 2016 revision and says the listed factors determine distributable profit rather than the dividend amount. It also has no citations and omits the cash/bonus share options and the Board proposal with General Assembly approval."
+    },
+    {
+      "id": "q22",
+      "type": "factual_text",
+      "answer_correct": "correct",
+      "faithfulness": 1,
+      "unsupported_claims": [],
+      "citations": "all_supported",
+      "refused": false,
+      "refusal_appropriate": true,
+      "score": 5,
+      "explanation": "Yanıt ortağı Helios Investment Partners LLP ve payını %35 olarak doğru veriyor; bilgi getirilen bağlamda yer alıyor ve s.19 atfı ortağı ile payı destekliyor. Tablodaki \"KAP\" kalem etiketi anlamsız olsa da yanıtın doğruluğunu etkilemiyor."
+    },
+    {
+      "id": "q23",
+      "type": "factual_text",
+      "answer_correct": "correct",
+      "faithfulness": 1,
+      "unsupported_claims": [],
+      "citations": "all_supported",
+      "refused": false,
+      "refusal_appropriate": true,
+      "score": 5,
+      "explanation": "The answer correctly names Prof. Dr. Ahmet Bolat as Chairman of the Board, matching the reference evidence, and the vice-chair detail is also supported. The s.138 citation points to a retrieved passage that directly states both appointments."
+    },
+    {
+      "id": "q24",
+      "type": "risk_summary",
+      "answer_correct": "partially_correct",
+      "faithfulness": 1,
+      "unsupported_claims": [],
+      "citations": "no_citations",
+      "refused": false,
+      "refusal_appropriate": true,
+      "score": 3,
+      "explanation": "The answer correctly lists all five financial risks and the general framework (natural hedging first, financial transactions, HRYK oversight), all supported by the retrieved context, but it has no citations. It omits the risk-specific management in the gold pages s.32-33 (e.g., 24-month/%60 fuel hedging, minimum cash policy, ISDA/CSA counterparty limits), which were not retrieved."
+    },
+    {
+      "id": "q25",
+      "type": "risk_summary",
+      "answer_correct": "partially_correct",
+      "faithfulness": 0.6,
+      "unsupported_claims": [
+        "Finansal Karşı Taraf Riski: \"Bu risk, finansal piyasaların döviz kurlarındaki oynaklıklarına karşı çeşitli türev ürünlerini kullanarak yönetilmektedir.\"",
+        "Nakit Akım Riski: \"Bu risk, finansal piyasaların döviz kurlarındaki oynaklıklarına karşı çeşitli türev ürünlerini kullanarak yönetilmektedir.\"",
+        "Akaryakıt Fiyatı Riski: \"finansal piyasaların döviz kurlarındaki ve faiz oranlarındaki oynaklıklarına karşı çeşitli türev ürünlerini kullanarak yönetilmektedir\" (the context describes hedging against commodity price volatility, not this for fuel risk)"
+      ],
+      "citations": "no_citations",
+      "refused": false,
+      "refusal_appropriate": true,
+      "score": 2,
+      "explanation": "The risk definitions and cash-flow management text are right, but interest rate risk is omitted, trade-receivable credit risk and its diversification are missing, a boilerplate derivatives sentence is wrongly applied to counterparty and cash-flow risks, and fuel hedging specifics are absent. The answer is also truncated mid-list and has no citations."
+    },
+    {
+      "id": "q26",
+      "type": "risk_summary",
+      "answer_correct": "partially_correct",
+      "faithfulness": 0.7,
+      "unsupported_claims": [
+        "risk yönetimi yaklaşımı etkileyici ve etkin bir şekilde yürütülmüştür",
+        "Kurumsal risklerin tanımlanması ve sınıflandırılması, stratejik riskler ... ve finansal riskler ... ile sınırlı olarak gerçekleştirilmiştir",
+        "hedeflerin ulaşılması etkileyebilecek risklerin tespiti, değerlendirilmesi, yönetilmesi ve raporlanması ile sınırlı olarak gerçekleştirilmiştir"
+      ],
+      "citations": "no_citations",
+      "refused": false,
+      "refusal_appropriate": true,
+      "score": 2,
+      "explanation": "Komite bilgileri ve stratejik/finansal riskler doğru, ancak yanıt dört kategoriden operasyonel ve uyum risklerini atlayıp sınıflandırmanın iki kategoriyle sınırlı olduğunu yanlış biçimde söylüyor; risk azaltma yöntemleri de büyük ölçüde eksik. Ayrıca bağlamda dayanağı olmayan \\\"etkileyici ve etkin\\\" değerlendirmesi yapıyor ve hiç atıf vermiyor."
+    },
+    {
+      "id": "q27",
+      "type": "risk_summary",
+      "answer_correct": "partially_correct",
+      "faithfulness": 0.9,
+      "unsupported_claims": [
+        "28,2% büyüme oranı (2023-2024)",
+        "kurumsal risklerini tanımlayarak al/sat/tut önerisi"
+      ],
+      "citations": "none_supported",
+      "refused": false,
+      "refusal_appropriate": true,
+      "score": 3,
+      "explanation": "The answer correctly reproduces the strategic risk definition and the credit, currency and liquidity actions, but omits several definitions, the actual strategic and compliance actions, and the operational and reputation risks, and it ends truncated. It also adds an irrelevant 28,2% growth row, whose only citation (s.11) is not in the retrieved context, and a misplaced al/sat/tut heading."
+    },
+    {
+      "id": "q28",
+      "type": "risk_summary",
+      "answer_correct": "partially_correct",
+      "faithfulness": 0.7,
+      "unsupported_claims": [
+        "Su Stresi: Mağazalarda soğutma sistemlerinin zorlanması ve taze gıda ürünlerinin bozulması.",
+        "Aşırı Hava Olayları: Mağazalarda soğutma sistemlerinin zorlanması ve ciddi gıda kaybı (fire) riski.",
+        "enerji verimliliği (GES) yatırımları",
+        "Tablo satırı: Kalem 'faaliyet_raporu', Değer '109'"
+      ],
+      "citations": "none_supported",
+      "refused": false,
+      "refusal_appropriate": true,
+      "score": 2,
+      "explanation": "Karbon fiyatlaması, enerji maliyetleri ve sıcaklığın soğutmaya etkisi doğru olsa da kuraklık/tarımsal arz ve lojistik etkisi, yasal düzenlemeler, F-gaz ve tüketici tercihi riskleri eksik; su stresi ve aşırı hava olayları yanlış etkilerle eşleştirilmiştir. Yanıt konu dışı başlıklarla şişirilmiş, tek atıf olan s.109 ise yalnızca giriş cümlesi içerdiğinden içeriği desteklememektedir."
+    },
+    {
+      "id": "q29",
+      "type": "comparison",
+      "answer_correct": "correct",
+      "faithfulness": 1,
+      "unsupported_claims": [],
+      "citations": "some_supported",
+      "refused": false,
+      "refusal_appropriate": true,
+      "score": 4,
+      "explanation": "Both figures (13,9 and 20,4 Milyar ABD Doları) and the derived 6,5 milyar artış are correct and supported by the retrieved context. However, the 2025 figure is cited to s.15, which covers financing and R&D and lacks this figure (it appears on s.11-12), so only the 2024 citation is valid."
+    },
+    {
+      "id": "q30",
+      "type": "comparison",
+      "answer_correct": "partially_correct",
+      "faithfulness": 0.67,
+      "unsupported_claims": [
+        "%9,6 büyüdü"
+      ],
+      "citations": "some_supported",
+      "refused": false,
+      "refusal_appropriate": true,
+      "score": 3,
+      "explanation": "Mağaza sayıları (13.583 ve 14.473) doğru, ancak büyüme oranı hatalı: gerçek artış yaklaşık %6,6 iken yanıt %9,6 diyor. 2024 atfı destekleniyor, fakat 2025 için verilen s.13 getirilen bağlamda yok (rakam s.12 ve s.18'de)."
+    },
+    {
+      "id": "q31",
+      "type": "comparison",
+      "answer_correct": "incorrect",
+      "faithfulness": 0.25,
+      "unsupported_claims": [
+        "BİM Birleşik Mağazalar A.Ş. | 2025 | 890 (bu rakam çalışan sayısı değil, 2025'te açılan yeni mağaza sayısıdır)",
+        "Türk Hava Yolları A.O. | 66.649 [THYAO 2025 faaliyet_raporu s.13] (s.13'te 100.111 yazıyor; 66.649 finansal raporun s.14'ünde geçiyor ve iştirakleri kapsamıyor)"
+      ],
+      "citations": "none_supported",
+      "refused": false,
+      "refusal_appropriate": true,
+      "score": 1,
+      "explanation": "Beklenen 101.663 ve 100.111 yerine BİM için yeni mağaza sayısı 890, THY için yanlış kaynağa atfedilmiş ve kapsamı dar 66.649 verilmiş, hangi şirketin daha fazla istihdam ettiği de söylenmemiştir. Doğru rakamlar bağlamda bulunduğu halde kullanılmamış, atıflar da yazılan değerleri desteklememektedir."
+    },
+    {
+      "id": "q32",
+      "type": "comparison",
+      "answer_correct": "partially_correct",
+      "faithfulness": 0.5,
+      "unsupported_claims": [
+        "BİM Birleşik Mağazalar A.Ş. 2025 Hasılat 140,0 Milyar TL"
+      ],
+      "citations": "some_supported",
+      "refused": false,
+      "refusal_appropriate": false,
+      "score": 2,
+      "explanation": "ASELS hasılatı (180,4 milyar TL) doğru ve bağlamca destekleniyor, ancak BIMAS için verilen 140,0 milyar TL yanlış (doğrusu 721 milyar TL) ve alınan bağlamda dayanağı yok; bağlamda BIMAS satış rakamı bulunmadığı için bunu belirtmesi gerekirdi. Yanıt gerçek bir karşılaştırma içermiyor, aynı tabloyu tekrar edip yarıda kesiliyor."
+    },
+    {
+      "id": "q33",
+      "type": "comparison",
+      "answer_correct": "incorrect",
+      "faithfulness": 0,
+      "unsupported_claims": [
+        "Türk Hava Yolları A.O. 2025 Net Profit 55.614 TL",
+        "BİM Birleşik Mağazalar A.Ş. 2025 Net Profit 338.093 TL"
+      ],
+      "citations": "none_supported",
+      "refused": false,
+      "refusal_appropriate": false,
+      "score": 1,
+      "explanation": "Both figures are wrong (expected 118.208 milyon TL for THYAO and 18,6 milyar TL for BİM): 55.614 is an unlabeled segment-table number, 338.093 is BİM's balance-sheet total on s.18 and does not appear on the cited s.121, and units are omitted. The retrieved context lacks the net profit figures, so the system should have refused, and it also repeated the table six times without any actual comparison."
+    },
+    {
+      "id": "q34",
+      "type": "comparison",
+      "answer_correct": "incorrect",
+      "faithfulness": 0.67,
+      "unsupported_claims": [
+        "2024 ile 2025 arasında %0,1 azalma olmuştur"
+      ],
+      "citations": "all_supported",
+      "refused": false,
+      "refusal_appropriate": false,
+      "score": 1,
+      "explanation": "The answer reports gross margin instead of the export share of revenue (%14,3 in 2024, %15,3 in 2025), and even calls the margin's rise a decrease. The retrieved context lacks the export share, so the system should have refused; its cited margin figures do match the context."
+    },
+    {
+      "id": "q35",
+      "type": "unanswerable",
+      "answer_correct": "correct",
+      "faithfulness": 1,
+      "unsupported_claims": [],
+      "citations": "no_citations",
+      "refused": true,
+      "refusal_appropriate": true,
+      "score": 5,
+      "explanation": "The question is unanswerable and the answer correctly states the information is not in the documents, inventing nothing. The retrieved context is empty, so the refusal is appropriate and faithful."
+    },
+    {
+      "id": "q36",
+      "type": "unanswerable",
+      "answer_correct": "correct",
+      "faithfulness": 1,
+      "unsupported_claims": [],
+      "citations": "no_citations",
+      "refused": true,
+      "refusal_appropriate": true,
+      "score": 5,
+      "explanation": "The question is unanswerable and the answer correctly states the information is not in the documents, inventing no figures. The retrieved context is empty, so the refusal is appropriate and fully faithful."
+    },
+    {
+      "id": "q37",
+      "type": "unanswerable",
+      "answer_correct": "correct",
+      "faithfulness": 1,
+      "unsupported_claims": [],
+      "citations": "no_citations",
+      "refused": true,
+      "refusal_appropriate": true,
+      "score": 5,
+      "explanation": "The question is unanswerable and the answer correctly states the information is not in the documents, inventing nothing. The retrieved context is empty, so the refusal is appropriate and faithful."
+    },
+    {
+      "id": "q38",
+      "type": "unanswerable",
+      "answer_correct": "correct",
+      "faithfulness": 1,
+      "unsupported_claims": [],
+      "citations": "no_citations",
+      "refused": true,
+      "refusal_appropriate": true,
+      "score": 5,
+      "explanation": "The question is unanswerable and the answer correctly states the information is not in the documents, inventing nothing. The retrieved context is empty, so the refusal is appropriate and faithful."
+    },
+    {
+      "id": "q39",
+      "type": "unanswerable",
+      "answer_correct": "correct",
+      "faithfulness": 1,
+      "unsupported_claims": [],
+      "citations": "no_citations",
+      "refused": true,
+      "refusal_appropriate": true,
+      "score": 5,
+      "explanation": "The question is unanswerable and the answer correctly states the information is not in the documents, inventing nothing. The retrieved context contains no mention of F-35 program revenue, so the refusal is appropriate."
+    },
+    {
+      "id": "q40",
+      "type": "unanswerable",
+      "answer_correct": "correct",
+      "faithfulness": 1,
+      "unsupported_claims": [],
+      "citations": "all_supported",
+      "refused": true,
+      "refusal_appropriate": true,
+      "score": 5,
+      "explanation": "Retrieved context lists BİM operations only in Türkiye, Fas and Mısır, with no Germany store count, so the refusal is correct and invents nothing. The cited page (s.16) shows only those foreign operations, which is consistent with the absence claim."
+    }
+  ]
+}

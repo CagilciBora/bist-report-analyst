@@ -137,6 +137,7 @@ def run_generation(pipe: RAGPipeline, items: list[dict], mode: str) -> dict:
             "expected_numbers": it["expected_numbers"], "found_numbers": found,
             "n_numbers": len(resp.numbers), "unverified": resp.unverified_numbers,
             "refused": refused, "citations": resp.citations,
+            "chunk_ids": [c.chunk_id for c in resp.chunks],  # lets eval/judge.py see the same context
         })
     answerable = [r for r in rows if r["type"] != "unanswerable"]
     unans = [r for r in rows if r["type"] == "unanswerable"]
@@ -208,7 +209,8 @@ def main() -> None:
 
     if not args.no_generation:
         print(f"Generation with {results['llm']} in mode {args.gen_mode} ...", flush=True)
-        results["generation"] = {"mode": args.gen_mode, **run_generation(pipe, items, args.gen_mode)}
+        results["generation"] = {"mode": args.gen_mode, "table_boost": settings.retrieval.table_boost_enabled,
+                                 **run_generation(pipe, items, args.gen_mode)}
 
     out_dir = ROOT / "eval" / "results"
     out_dir.mkdir(parents=True, exist_ok=True)

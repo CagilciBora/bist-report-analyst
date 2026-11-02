@@ -1,0 +1,508 @@
+{
+  "counts": {
+    "ok": 38,
+    "needs_fix": 2,
+    "drop": 0,
+    "errors": 0
+  },
+  "items": [
+    {
+      "id": "q01",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q02",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q03",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q04",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q05",
+      "verdict": "needs_fix",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": false,
+      "question_clear": true,
+      "issues": [
+        "expected_pages lists BIMAS 2024 faaliyet_raporu s.18, but the passage shown for that page covers only the Extel awards and has no investment figure. The answer (\"kendi kaynaklarımızla 18,1 milyar TL yatırım\") appears only on s.9."
+      ],
+      "suggested_fix": "Set expected_pages to [{\"ticker\": \"BIMAS\", \"year\": 2024, \"doc_type\": \"faaliyet_raporu\", \"page\": 9}], removing page 18 unless other content on that page is shown to state the 18,1 milyar TL figure. Keep all other fields unchanged.",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q06",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q07",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q08",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q09",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q10",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q11",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q12",
+      "verdict": "needs_fix",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": false,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [
+        "expected_numbers includes 201.778, the 2024 fuel expense, but the question asks only about 2025"
+      ],
+      "suggested_fix": "Set expected_numbers to [\"240.599\"] and leave the other fields unchanged.",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q13",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q14",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q15",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q16",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q17",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q18",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [
+        "Minor: the listed finansal_rapor p.2 is not in the supplied evidence, so that page could not be checked; the faaliyet_raporu p.142 evidence still answers the question (PwC Bağımsız Denetim ve SMMM A.Ş., auditor's report dated 4 Mart 2026 on the 2025 consolidated statements)."
+      ],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q19",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [
+        "Minor: the evidence shows Prof. Dr. Ercümend ARVAS was elected chairman at the 14.06.2024 board meeting, but it does not show who held the post earlier in 2024. The report still gives one clear answer.",
+        "Minor: the passages shown for pages 9 and 20 do not name the chairman, except the chunk starting on page 20 and running to page 22, which includes the signature block. The answer is explicit in the chunk covering pages 64-65."
+      ],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q20",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "verdict": "ok",
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q21",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q22",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q23",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [
+        "Minor: the shown evidence for p.119 is irrelevant and no passages are shown for p.123 or p.138, so those expected pages could not be verified. P.84 alone answers the question (Prof. Dr. Ahmet Bolat)."
+      ],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q24",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q25",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [
+        "Minor: no text from finansal_rapor pages 92 and 98 was included in the evidence, so these two expected pages could not be verified. The shown pages are enough to answer the question.",
+        "Minor: the faaliyet raporu covers 'credit' as financial counterparty risk; customer credit risk detail is not in the shown evidence."
+      ],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q26",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q27",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q28",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [
+        "Minor: the evidence shown only covers pages 81-82, so the relevance of expected pages 85, 90 and 91 could not be verified. Page 82 alone answers the question: physical risks (drought-driven food supply problems, extreme weather effects on logistics) and transition risks (carbon pricing, energy costs, legal regulations)."
+      ],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q29",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q30",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q31",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q32",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q33",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [
+        "Minor: THYAO's parent-company share and balance-sheet 'Net Dönem Karı' are 118.208 million TL, while total period profit including minorities is 118.117 million TL. 118.208 is the standard headline figure, so the expected number stands."
+      ],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q34",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q35",
+      "verdict": "ok",
+      "answerable_from_evidence": false,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q36",
+      "verdict": "ok",
+      "answerable_from_evidence": false,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q37",
+      "verdict": "ok",
+      "answerable_from_evidence": false,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q38",
+      "verdict": "ok",
+      "answerable_from_evidence": false,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q39",
+      "verdict": "ok",
+      "answerable_from_evidence": false,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q40",
+      "verdict": "ok",
+      "answerable_from_evidence": false,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    }
+  ]
+}

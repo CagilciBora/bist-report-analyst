@@ -87,11 +87,15 @@ class RetrievalConfig(BaseModel):
 
 
 class LLMConfig(BaseModel):
-    backend: Literal["ollama", "anthropic", "openai"] = "ollama"
+    backend: Literal["ollama", "claude_code", "anthropic", "openai"] = "ollama"
     ollama_url: str = "http://localhost:11434"
     ollama_model: str = "qwen2.5:3b-instruct"
     anthropic_model: str = "claude-opus-5-5"
     openai_model: str = "gpt-4o-mini"
+    claude_code_model: str = "opus"      # alias understood by the Claude Code CLI
+    claude_code_path: str = ""           # empty = auto-detect the `claude` binary
+    judge_backend: str = "claude_code"   # LLM used by eval/judge.py
+    judge_workers: int = 3               # parallel judge calls
     temperature: float = 0.1
     max_tokens: int = 900
     timeout_s: int = 600

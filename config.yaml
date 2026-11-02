@@ -55,11 +55,17 @@ retrieval:
   table_boost: 1.15              # multiply score of table chunks for financial questions
 
 llm:
-  backend: ollama                # ollama | anthropic | openai
+  backend: ollama                # ollama | claude_code | anthropic | openai
   ollama_url: http://localhost:11434
   ollama_model: qwen2.5:3b-instruct
   anthropic_model: claude-opus-5-5
   openai_model: gpt-4o-mini
+  # claude_code = Claude via your logged-in Claude Code CLI (uses a Pro/Max
+  # subscription, no API key). Used by eval/judge.py and optionally for answers.
+  claude_code_model: opus
+  claude_code_path: ""           # empty = auto-detect (PATH, Cursor/VS Code extension)
+  judge_backend: claude_code
+  judge_workers: 3
   temperature: 0.1
   max_tokens: 900
   timeout_s: 600

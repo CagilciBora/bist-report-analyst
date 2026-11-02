@@ -28,7 +28,7 @@ A basic RAG chatbot (fixed-size chunks → dense top-5 → prompt) breaks on fin
 - **Structure-aware chunking**: 350–450 tokens (measured with the embedding model's tokenizer), sentence-level overlap, never across sections; large tables split by rows with repeated header.
 - **Hybrid retrieval**: `BAAI/bge-m3` dense vectors in **Qdrant (embedded mode)** + **BM25** (`rank_bm25`, Turkish-aware tokenizer, optional Snowball stemming) → **RRF** (k = 60) → optional **cross-encoder** `BAAI/bge-reranker-v2-m3`. Four switchable modes: `dense`, `bm25`, `hybrid`, `hybrid_rerank`.
 - **Query understanding**: rule-based parser for tickers/aliases (`THY`, `Aselsan`, `BİM`, dotless-ı aware), years (`2024 yılı`, `son iki yıl`), periods (`ilk çeyrek`, `Q3`), doc types; optional LLM parser with validated JSON.
-- **Generation**: Ollama `qwen2.5:3b-instruct` by default (free, local); Anthropic / OpenAI as optional backends. Versioned prompt template (`prompts/answer_tr.md`).
+- **Generation**: Ollama `qwen2.5:3b-instruct` by default (free, local); Claude via the Claude Code CLI (`claude_code`, uses a Claude subscription), Anthropic API or OpenAI as optional backends. Versioned prompt template (`prompts/answer_tr.md`).
 - **Numeric verification**: every number in the answer is matched against the context allowing format and unit-scale differences (`1,2 milyar TL` ≡ `1.200.000 bin TL`); shown calculations are re-computed.
 - **API + UI**: FastAPI (`/ask`, `/documents`, `/companies`, `/ingest`, `/health`) and a Streamlit chat with filters, mode switch, source panel with per-retriever scores and stage timings.
 - **Evaluation**: Hit@k, MRR, filter accuracy, numeric faithfulness, unverified-number rate, unanswerable handling, latency — compared across retrieval modes, stemming and table boost.
@@ -116,6 +116,8 @@ uv run kap list                        # indexed documents
 uv run kap remove ASELS 2024 faaliyet_raporu
 uv run kap ask "THY'nin 2025 yılı hasılatı ne kadar?"
 uv run kap ask "ASELSAN ihracat" --mode bm25 --no-llm   # retrieval only
+uv run python eval/judge.py --review-dataset          # Claude reviews the eval set
+uv run python eval/judge.py                           # Claude grades the latest eval answers
 ```
 
 ### API + UI
@@ -181,6 +183,35 @@ Reading the table:
 - **The verifier catches invented numbers** (q32: a BİM revenue "140,0 Milyar TL" that exists nowhere is flagged) but **not** a real number attached to the wrong line item (q33: "55.614 TL" exists in the context but is not net profit).
 - Mean generation time ≈ 78 s per answer (p95 143 s) on CPU.
 - False refusals include answers that gave the correct figure and then appended "not in the documents" (q01), a small-model instruction-following issue.
+
+### LLM-as-a-judge (Claude Opus 5.5 via Claude Code)
+
+`eval/judge.py` adds a judge on top of the deterministic metrics. It runs through the logged-in **Claude Code CLI** (`llm.judge_backend: claude_code`), so a Claude Pro/Max subscription covers it and no API key is needed. Two jobs:
+
+- **Dataset review** (`--review-dataset`): replaced the manual review of the 40 eval items. 39 passed and 1 real error was fixed (q12 listed a 2024 figure for a 2025 question). Two judge flags were **false alarms** (q05, q23): the judge hadn't been shown the right chunk of the page. The evidence picker was fixed and is now covered by `tests/test_judge.py`; the rejected suggestion is recorded in the eval file.
+- **Answer grading** (default): judges correctness against the gold evidence pages, plus faithfulness, citation support and refusals, against what the system actually retrieved.
+
+Judge: claude_code/opus · graded answers of ollama/qwen2.5:3b-instruct · 40 questions (0 judge errors)
+
+| Accuracy | Faithfulness | Citations fully supported | Refusal appropriate | Mean score (1-5) |
+|---|---|---|---|---|
+| 0.70 | 0.74 | 0.40 | 0.90 | 3.48 |
+
+| Type | n | Accuracy | Faithfulness |
+|---|---|---|---|
+| comparison | 6 | 0.33 | 0.52 |
+| factual_number | 9 | 0.78 | 0.73 |
+| factual_text | 6 | 1.00 | 0.96 |
+| risk_summary | 5 | 0.50 | 0.78 |
+| table_lookup | 8 | 0.56 | 0.56 |
+| unanswerable | 6 | 1.00 | 1.00 |
+
+Judge vs deterministic metrics: numbers agreement 0.80 (5 disagreements), refusal agreement 0.95 (2 disagreements).
+
+- The judge catches what string matching cannot: a **1000× unit error** (q15: a bin TL figure given as TL), a wrong sum of table rows (q16), and a wrong growth rate (q30). It also accepts correct answers that string matching missed (q12, q14).
+- Weakest areas are comparisons (0.33) and table lookups (0.56). In both, the 3B model picks the wrong row or column from the right context.
+- These grades are for the 29 Oct generation run (table boost **on**, before it was turned off).
+- Agreement with the deterministic metrics is reported automatically as a sanity check. Judge verdicts should still be spot-checked: run to run they vary, and the judge is only as good as the evidence it is shown.
 <!-- EVAL_RESULTS_END -->
 
 ## Design decisions

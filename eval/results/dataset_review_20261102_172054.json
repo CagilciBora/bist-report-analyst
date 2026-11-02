@@ -1,0 +1,522 @@
+{
+  "counts": {
+    "ok": 35,
+    "needs_fix": 5,
+    "drop": 0,
+    "errors": 0
+  },
+  "items": [
+    {
+      "id": "q01",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q02",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q03",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [
+        "Minor: expected pages 51 and 125 have no passages in the evidence shown, so they could not be verified. The answer is fully supported by pages 10, 13, 18, 30 and 40."
+      ],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q04",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [
+        "Minor: expected page 80 is listed, but no passage from it appears in the evidence, so it could not be verified. This does not affect the answer, which s.43 states directly."
+      ],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q05",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q06",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q07",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q08",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q09",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [
+        "Minor: expected page 125 is listed, but no passage from it appears in the evidence shown, so its relevance could not be verified. The answer is fully supported by pages 10, 12, 18, 30 and 39."
+      ],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q10",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q11",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q12",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q13",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q14",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q15",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q16",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q17",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "verdict": "ok",
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q18",
+      "verdict": "needs_fix",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [
+        "The answer (PwC Bağımsız Denetim ve Serbest Muhasebeci Mali Müşavirlik A.Ş.) appears only on finansal_rapor p.2.",
+        "The evidence shown for faaliyet_raporu pp.142-143 does not name the auditor: it covers the responsibility statement and management's duties for the annual report."
+      ],
+      "suggested_fix": "Set expected_pages to [{\\\"ticker\\\": \\\"THYAO\\\", \\\"year\\\": 2025, \\\"doc_type\\\": \\\"finansal_rapor\\\", \\\"page\\\": 2}] and remove faaliyet_raporu pp.142 and 143, unless the full pages are confirmed to name PwC as auditor of the consolidated financial statements.",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q19",
+      "verdict": "needs_fix",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [
+        "expected_pages contains pages that do not support the answer: the page 20 passages cover lawsuits, personnel and donations, and the page 9 text never names the chairman (any board table there is missing from the extracted text).",
+        "The answer (Prof. Dr. Ercümend ARVAS) appears only on pages 64-65, where the 14.06.2024 board decision and the 'Yönetim kurulu başkanının adı' field are given.",
+        "Minor: the chairman was elected at the 14.06.2024 meeting, and the evidence does not show who held the post earlier in 2024, so 'in 2024' is slightly imprecise."
+      ],
+      "suggested_fix": "Set expected_pages to [{\"ticker\": \"ASELS\", \"year\": 2024, \"doc_type\": \"faaliyet_raporu\", \"page\": 64}, {\"ticker\": \"ASELS\", \"year\": 2024, \"doc_type\": \"faaliyet_raporu\", \"page\": 65}]. Optionally make the question time-specific: \"ASELSAN'ın 14 Haziran 2024 tarihli yönetim kurulu toplantısında yönetim kurulu başkanlığına kim seçilmiştir?\"",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q20",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q21",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q22",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q23",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "verdict": "needs_fix",
+      "issues": [
+        "Only page 123 supports the answer: it names Prof. Dr. Ahmet Bolat as Chairman of the Board and Executive Committee, appointed in 2022.",
+        "Pages 84 (codeshare partnerships), 119 (independent board member criteria) and 138 (credit ratings, Thai Airways JBA) do not name the chairman in the evidence shown, so they are irrelevant expected pages."
+      ],
+      "suggested_fix": "Set expected_pages to [{\"ticker\": \"THYAO\", \"year\": 2025, \"doc_type\": \"faaliyet_raporu\", \"page\": 123}]; remove pages 84, 119 and 138. All other fields stay unchanged.",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q24",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q25",
+      "answerable_from_evidence": false,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "verdict": "needs_fix",
+      "issues": [
+        "Credit risk is explicitly requested, but the evidence only names it in the list of exposures (finansal_rapor s.81). No passage explains how it is managed (counterparty limits, collateral, receivables monitoring, etc.).",
+        "Fuel, currency and interest rate risks are covered: fuel at finansal_rapor s.98 and faaliyet_raporu s.131, currency at s.91-92 and s.97-98, interest rate at s.92 and s.97.",
+        "The fuel section on faaliyet_raporu s.131 is cut off after describing the risk, so the fuel management content comes from finansal_rapor s.98."
+      ],
+      "suggested_fix": "Preferred: add the finansal_rapor 2025 page(s) with Note 36 b.x credit risk management to expected_pages, after confirming the page number in the source document. Alternative: remove credit from the question: \"Summarize the key financial risks Turkish Airlines reports for 2025 (fuel, currency, interest rate) and how it manages them.\"",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q26",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q27",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [
+        "Minor: the evidence excerpt shows the actions for strategic risk but not its definition text, and it cuts off before the actions for compliance risk and the later risk rows. The core of the answer (risk types, definitions and actions, including credit risk) is still on the expected pages 67-68."
+      ],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q28",
+      "verdict": "needs_fix",
+      "answerable_from_evidence": false,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [
+        "Evidence only partly answers the question: it has one transition risk (Lojistik Maliyet Enflasyonu, s.90-91) and no physical climate risk at all.",
+        "The question asks for both physical and transition risks, so a complete answer cannot be built from the expected pages.",
+        "Page 82 contains only the general Çevre Politikası description, with no risk content.",
+        "Page 85 is an opportunities table (nutritious food, waste income, digital efficiency, GES), not climate risks.",
+        "Most of page 90 covers the employee turnover social risk; only its end, which continues on s.91, is relevant."
+      ],
+      "suggested_fix": "Preferred: find the pages in the BIMAS 2025 faaliyet_raporu risk table that list physical climate risks and any other transition risks, add them to expected_pages, and remove pages 82 and 85. If no such pages exist, narrow the question to: \"BİM'in 2025 faaliyet raporunda geçiş riski olarak tanımlanan lojistik maliyet enflasyonu riski nedir ve değer zincirini nasıl etkiler?\" and set expected_pages to BIMAS 2025 faaliyet_raporu pages 90 and 91. Keep tickers, years and the empty expected_numbers unchanged.",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q29",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q30",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q31",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [
+        "Minor: no passage from expected page THYAO s.19 appears in the evidence, so that page could not be verified. This does not affect the answer, because s.13 gives the THY figure (100.111)."
+      ],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q32",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q33",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [
+        "Minor: THYAO's 118.208 is the net profit in million TL attributable to the parent (and the balance-sheet 'Net Dönem Karı'); total period profit including non-controlling interests is 118.117. The difference is negligible for this comparison and 118.208 is the standard figure."
+      ],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q34",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q35",
+      "verdict": "ok",
+      "answerable_from_evidence": false,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q36",
+      "verdict": "ok",
+      "answerable_from_evidence": false,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q37",
+      "verdict": "ok",
+      "answerable_from_evidence": false,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q38",
+      "verdict": "ok",
+      "answerable_from_evidence": false,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q39",
+      "verdict": "ok",
+      "answerable_from_evidence": false,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q40",
+      "verdict": "ok",
+      "answerable_from_evidence": false,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    }
+  ]
+}

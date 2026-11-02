@@ -1,14 +1,21 @@
-"""LLMClient: one interface, three backends (Ollama default, Anthropic, OpenAI).
+"""LLMClient: one interface, four backends (Ollama default, Claude Code, Anthropic, OpenAI).
 
 The pipeline only calls `client.generate(system, user)`; switching backend in
-config.yaml changes nothing else. Paid backends read keys from .env.
+config.yaml changes nothing else. Paid API backends read keys from .env;
+the Claude Code backend uses your logged-in Claude subscription instead.
 """
 
 from __future__ import annotations
 
+import glob
+import json
 import logging
 import os
+import shutil
+import subprocess
+import tempfile
 from abc import ABC, abstractmethod
+from pathlib import Path
 
 import httpx
 from dotenv import load_dotenv
@@ -146,8 +153,75 @@ class OpenAIClient(LLMClient):
         return resp.choices[0].message.content or ""
 
 
+class ClaudeCodeClient(LLMClient):
+    """Claude through the Claude Code CLI in headless mode (`claude -p`).
+
+    Why this exists: a Claude Pro/Max subscription covers Claude Code but is
+    NOT Anthropic API credit. Calling the CLI non-interactively lets scripts
+    (like the LLM judge) use the subscription you are already logged in with.
+    Calls count against the plan's usage limits; there is no per-call bill.
+    We disable all tools, settings and MCP servers so it behaves like a plain
+    model call, and use --json-schema when we need validated JSON back.
+    """
+
+    name = "claude_code"
+    SEARCH_GLOBS = (
+        "~/.cursor/extensions/anthropic.claude-code-*/resources/native-binary/claude",
+        "~/.vscode/extensions/anthropic.claude-code-*/resources/native-binary/claude",
+        "~/.local/bin/claude",
+    )
+
+    @property
+    def model(self) -> str:
+        return self.cfg.claude_code_model
+
+    def binary(self) -> str:
+        """Configured path, else `claude` on PATH, else the newest editor-extension copy."""
+        if self.cfg.claude_code_path:
+            return self.cfg.claude_code_path
+        if found := shutil.which("claude"):
+            return found
+        candidates = [p for pattern in self.SEARCH_GLOBS for p in glob.glob(os.path.expanduser(pattern))]
+        if not candidates:
+            raise LLMUnavailableError("Claude Code CLI not found. Install it (https://claude.com/claude-code), "
+                                      "log in once with `claude`, or set llm.claude_code_path in config.yaml.")
+        return max(candidates, key=lambda p: Path(p).stat().st_mtime)
+
+    def check(self) -> None:
+        self.binary()
+
+    def _run(self, system: str, user: str, schema: dict | None = None) -> dict:
+        cmd = [self.binary(), "-p", "--model", self.model, "--output-format", "json",
+               "--system-prompt", system, "--tools", "", "--no-session-persistence",
+               "--setting-sources", "", "--strict-mcp-config", "--disable-slash-commands"]
+        if schema is not None:
+            cmd += ["--json-schema", json.dumps(schema)]
+        # The prompt goes through stdin (long contexts would hit argv size limits);
+        # an empty temp dir as cwd keeps project files (e.g. CLAUDE.md) out of the call.
+        with tempfile.TemporaryDirectory() as cwd:
+            proc = subprocess.run(cmd, input=user, capture_output=True, text=True, cwd=cwd,
+                                  timeout=self.cfg.timeout_s)
+        try:
+            out = json.loads(proc.stdout)
+        except json.JSONDecodeError as exc:
+            raise LLMUnavailableError(f"Claude Code returned no JSON (exit {proc.returncode}): "
+                                      f"{(proc.stderr or proc.stdout)[:500]}") from exc
+        if out.get("is_error"):
+            raise LLMUnavailableError(f"Claude Code error: {out.get('result') or out.get('subtype')}")
+        return out
+
+    def generate(self, system: str, user: str) -> str:
+        return self._run(system, user)["result"]
+
+    def generate_json(self, system: str, user: str, schema: dict) -> dict:
+        """Structured output validated by the CLI against a JSON Schema."""
+        out = self._run(system, user, schema)
+        return out.get("structured_output") or json.loads(out["result"])
+
+
 def make_llm(cfg: LLMConfig, backend: str | None = None) -> LLMClient:
     """Factory: pick the backend named in config (or the override)."""
     backend = backend or cfg.backend
-    classes = {"ollama": OllamaClient, "anthropic": AnthropicClient, "openai": OpenAIClient}
+    classes = {"ollama": OllamaClient, "claude_code": ClaudeCodeClient,
+               "anthropic": AnthropicClient, "openai": OpenAIClient}
     return classes[backend](cfg)

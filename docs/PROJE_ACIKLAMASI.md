@@ -168,6 +168,18 @@ Filtre doğruluğu: ticker 1,00 · yıl 0,97. Üretim (qwen2.5:3b, hybrid_rerank
 - **Cevaplanamaz 6 sorunun 6'sı** doğru şekilde "belgelerde yok" ile cevaplandı; 4'ünde filtre sıfır parça döndürdüğü için LLM hiç çağrılmadı.
 
 
+### LLM hakem (LLM-as-a-judge) sonuçları
+`eval/judge.py`, Claude Opus 5.5'i Claude Code CLI üzerinden (abonelikle, API anahtarı olmadan) hakem olarak kullanır.
+
+- **Değerlendirme setinin incelenmesi:** 40 sorunun 39'u geçti, 1 gerçek hata düzeltildi (q12). İki uyarı **yanlış alarmdı** (q05, q23). Sebep: hakeme sayfanın doğru parçası gösterilmemişti. Ders: **hakem, ona verdiğiniz kanıt kadar iyidir.**
+- **Cevapların puanlanması:** doğruluk 0,70 · sadakat (faithfulness) 0,74 · kaynakları tam destekleyen cevap 0,40 · ret kararı doğru 0,90. En zayıf tipler karşılaştırma (0,33) ve tablo okuma (0,56).
+- Hakem, deterministik metriklerin kaçırdığını yakaladı:
+  - q15: bin TL'lik rakam TL olarak verilmiş, 1000 kat hata.
+  - q16: alakasız satırlar toplanmış.
+  - q30: büyüme oranı yanlış hesaplanmış.
+- Deterministik metriklerle uyum otomatik raporlanır (sayılarda %80, retlerde %95). Bu, insanı tamamen çıkarmak yerine hakemi otomatik denetlemenin yoludur.
+- **Mülakat cümlesi:** "Sayısal soruları kodla, açık uçlu cevapları daha güçlü bir modelle değerlendirdim. Hakemin kararlarını deterministik metriklerle karşılaştırıp uyuşmazlıkları raporladım; hakemin de yanılabildiğini iki yanlış alarmla gördüm."
+
 ---
 
 ## 6. Sınırlamalar ve çözüm yolları

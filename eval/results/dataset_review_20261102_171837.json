@@ -1,0 +1,34 @@
+{
+  "counts": {
+    "ok": 2,
+    "needs_fix": 0,
+    "drop": 0,
+    "errors": 0
+  },
+  "items": [
+    {
+      "id": "q01",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "q02",
+      "verdict": "ok",
+      "answerable_from_evidence": true,
+      "expected_numbers_correct": true,
+      "metadata_correct": true,
+      "question_clear": true,
+      "issues": [],
+      "suggested_fix": "",
+      "model": "claude_code/opus",
+      "date": "2026-11-02"
+    }
+  ]
+}
