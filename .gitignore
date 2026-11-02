@@ -12,3 +12,4 @@ __pycache__/
 .ruff_cache/
 # Secrets
 .env
+KAP_RAG_PROMPT.md
